@@ -1,0 +1,7 @@
+﻿@model IEnumerable<NetworkEquipments.Services.DTO.StreetDto>
+<select id="StreetId" name="StreetId" onchange="OnStreetsSelectionChange()" class="form-control">
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.Name</option>
+    }
+</select>

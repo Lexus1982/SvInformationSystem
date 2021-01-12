@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "Отказ в доступе";
+}
+
+<h4>Отсутствуют права доступа к соответствующему разделу</h4>
+@(!User.Identity.IsAuthenticated
+      ? Html.ActionLink("Войти", "Login", new { area = "", controller = "Authorization" })
+      : Html.ActionLink("Выйти", "Logout", new { area = "", controller = "Authorization" }))
+

@@ -1,0 +1,78 @@
+﻿@model NetworkEquipments.Web.Models.NetworkEquipment.NetworkEquipmentModel
+
+@{
+    ViewBag.Title = "Удаление оборудования";
+}
+
+<h4>@ViewBag.Title</h4>
+
+<div>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TownName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TownName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StreetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplexHouse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ComplexHouse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Entrance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrance)
+            @if (Model.Entrance == null)
+            {<br>}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentTypeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ip)
+            @if (Model.Ip == null)
+            {<br>}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Commentary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Commentary)
+            @if (Model.Commentary == null)
+            {<br>}
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-sm btn-primary" />
+            @Html.ActionLink("Отмена", "Index", new { networkId = @Model.NetworkId }, new { @class = "btn btn-sm btn-secondary", @role = "button" })
+        </div>
+    }
+</div>

@@ -1,0 +1,128 @@
+﻿@model NetworkEquipments.Web.Models.Network.NetworkViewModel
+
+@{
+    ViewBag.Title = "Сегменты сети связи";
+}
+
+<div class="row filter_menu">
+    <div class="col-auto" style="margin: 5px 15px;">
+        @* TODO: релизовать через Ajax
+                @using (Ajax.BeginForm("SearchUserFiles", new AjaxOptions { UpdateTargetId = "body_content" }))
+            {
+                <div class="col-auto">
+                    <div>Поиск файла: </div>
+                    <div><input type="text" name="searchName" style="width: 200px;"/></div>
+                    <div><input type="submit" value="Найти" style="margin-top: 10px" /></div>
+                </div>
+            }*@
+
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div class="col-auto" style="margin-right: 5px; padding: 0px;">
+                    <label>Поиск: </label>
+                </div>
+                <div class="col-auto" style="margin-right: 5px; padding: 0px;">
+                    @*placeholder="строка"*@
+                    @Html.TextBox("search", Model.Filter.SearchValue)
+                </div>
+
+                <div class="col-auto" style="margin-right: 23px; padding: 0px;">
+                    <input type="submit" value="Найти" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<hr />
+<p>
+    @*<a title="Добавить" href='@Url.Action("Replace", "SectionUserFiles", new {id = item.Id})' class="FileItem">
+            <img src="~/Content/Images/Create.png" style="width: 16px; height: 16px; margin-right: 5px;" />
+        </a>*@
+    @*@Html.ActionLink("Добавить cегмент", "Create")*@
+    @if (ViewBag.IsWriteAccess)
+    {
+        <a class="btn btn-sm btn-primary" role="button" href='@Url.Action("Create", "Network")'>Добавить cегмент</a>
+    }
+</p>
+<table class="table table-hover table-sm">
+    <thead class="thead-strong">
+        <tr>
+            <th>
+                @Html.ActionLink("Населенный пункт", "Index", new { sort = Model.Sort.TownNameSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>
+                @Html.ActionLink("Улица", "Index", new { sort = Model.Sort.StreetNameSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>
+                @Html.ActionLink("№ дома", "Index", new { sort = Model.Sort.ComplexHouseSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>
+                @Html.ActionLink("№ сегмента сети", "Index", new { sort = Model.Sort.SegmentNumberSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>
+                @Html.ActionLink("VLAN управления", "Index", new { sort = Model.Sort.VlanManageSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>
+                @Html.ActionLink("VLAN Интернет", "Index", new { sort = Model.Sort.VlanInternetSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>
+                @Html.ActionLink("Диапазон IP адресов", "Index", new { sort = Model.Sort.IpIntervalSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>
+                @Html.ActionLink("Всего оборудования", "Index", new { sort = Model.Sort.EquipmentsCountSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>
+                @Html.ActionLink("Примечание", "Index", new { sort = Model.Sort.CommentarySort, search = Model.Filter.SearchValue })
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody class="tbody-strong" id="tabledata">
+        @foreach (var item in Model.Networks)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TownName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StreetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ComplexHouse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SegmentNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VlanManage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VlanInternet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IpInterval)
+                </td>
+                <td>
+                    @Html.ActionLink(item.EquipmentsCount.ToString(), "Index", "NetworkEquipment", new { networkId = item.Id }, null)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Commentary)
+                </td>
+                <td>
+                    @if (ViewBag.IsWriteAccess)
+                    {
+                        <a title="Редактировать" href='@Url.Action("Edit", "Network", new {id = item.Id})'>
+                            <img src="~/Content/Images/Edit.png" style="width: 16px; height: 16px; margin-right: 5px;" />
+                        </a>
+                        <a title="Удалить" href='@Url.Action("Delete", "Network", new {id = item.Id})'>
+                            <img src="~/Content/Images/Delete.png" style="width: 16px; height: 16px; margin-right: 5px;" />
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,90 @@
+﻿@model NetworkEquipments.Web.Models.Network.NetworkModel
+
+@{
+    ViewBag.Title = "Удаление сегмента сети";
+}
+
+<h4>@ViewBag.Title</h4>
+
+<div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TownName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TownName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StreetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplexHouse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ComplexHouse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SegmentNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SegmentNumber)
+            @if (Model.SegmentNumber == null)
+            {<br>}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VlanManage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VlanManage)
+            @if (Model.VlanManage.IsEmpty())
+            {<br>}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VlanInternet)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VlanInternet)
+            @if (Model.VlanInternet.IsEmpty())
+            {<br>}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IpInterval)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IpInterval)
+            @if (Model.IpInterval.IsEmpty())
+            {<br>}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Commentary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Commentary)
+            @if (Model.Commentary == null)
+            {<br>}
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-sm btn-primary" />
+            <a class="btn btn-sm btn-secondary" role="button" href='@Url.Action("Index", "Network")'>Отмена</a>
+        </div>
+    }
+</div>

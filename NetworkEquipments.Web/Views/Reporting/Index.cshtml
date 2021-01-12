@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Отчетность";
+}
+
+<ul>
+    <li>@Html.ActionLink("Оборудование на сети связи (свернуто)", "GetReportData", new {id = 4 })</li>
+    <li>@Html.ActionLink("Оборудование в разрезе населенных пунктов", "GetReportData", new { id = 5 })</li>
+    <li>@Html.ActionLink("Оборудование в разрезе сегментов сети", "GetReportData", new { id = 6 })</li>
+</ul>
+

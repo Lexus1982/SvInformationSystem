@@ -1,0 +1,77 @@
+﻿@model NetworkEquipments.Web.Models.EquipmentType.EquipmentTypeViewModel
+
+@{
+    ViewBag.Title = "Типы устройств";
+}
+
+<div class="row filter_menu">
+    <div class="col-auto" style="margin: 5px 15px;">
+        @* TODO: релизовать через Ajax
+                @using (Ajax.BeginForm("SearchUserFiles", new AjaxOptions { UpdateTargetId = "body_content" }))
+            {
+                <div class="col-auto">
+                    <div>Поиск файла: </div>
+                    <div><input type="text" name="searchName" style="width: 200px;"/></div>
+                    <div><input type="submit" value="Найти" style="margin-top: 10px" /></div>
+                </div>
+            }*@
+
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div class="col-auto" style="margin-right: 5px; padding: 0px;">
+                    <label>Поиск: </label>
+                </div>
+                <div class="col-auto" style="margin-right: 5px; padding: 0px;">
+                    @Html.TextBox("search", Model.Filter.SearchValue)
+                </div>
+
+                <div class="col-auto" style="margin-right: 23px; padding: 0px;">
+                    <input type="submit" value="Найти" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<hr />
+<p>
+    @Html.ActionLink("Назад", "Index", "Administrating", null, new { @class = "btn btn-sm btn-secondary", @role = "button" })
+    @Html.ActionLink("Добавить", "Create", "EquipmentType", null, new { @class = "btn btn-sm btn-primary", @role = "button" })
+</p>
+
+<table class="table table-hover table-sm">
+    <thead class="thead-strong">
+        <tr>
+            <th>
+                @Html.ActionLink("Наименование", "Index", new { sort = Model.Sort.NameSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>
+                @Html.ActionLink("Позиция", "Index", new { sort = Model.Sort.PositionSort, search = Model.Filter.SearchValue })
+            </th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+
+    <tbody class="tbody-strong" id="tableData">
+        @foreach (var item in Model.EquipmentType)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                    <a title="Редактировать" href='@Url.Action("Edit", "EquipmentType", new {id = item.Id})'>
+                        <img src="~/Content/Images/Edit.png" style="width: 16px; height: 16px; margin-right: 5px;" />
+                    </a>
+                    <a title="Удалить" href='@Url.Action("Delete", "EquipmentType", new {id = item.Id})'>
+                        <img src="~/Content/Images/Delete.png" style="width: 16px; height: 16px; margin-right: 5px;" />
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

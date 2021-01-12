@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<!-- saved from url=(0123)https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-light" lang="ru-ru" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Элементы языка регулярных выражений — краткий справочник">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+
+		<meta name="ms.devlang" content="dotnet">
+<meta name="author" content="rpetrusha">
+<meta name="ms.author" content="ronpet">
+<meta name="breadcrumb_path" content="/dotnet/breadcrumb/toc.json">
+<meta name="apiPlatform" content="dotnet">
+<meta name="ms.topic" content="conceptual">
+<meta name="bilingual_type" content="hover over">
+<meta name="ms.prod" content="dotnet">
+<meta name="uhfHeaderId" content="MSDocsHeader-DotNet">
+<meta name="ms.openlocfilehash" content="053df7eeba10938f1d1d749e856f64d179d471d4">
+<meta name="ms.assetid" content="930653a6-95d2-4697-9d5a-52d11bb6fd4c">
+<meta name="ms.contentlocale" content="ru-RU">
+<meta name="ms.lasthandoff" content="05/15/2019">
+<meta name="ms.translationtype" content="HT">
+<meta name="ms.sourcegitcommit" content="8699383914c24a0df033393f55db3369db728a7b">
+<meta name="ms.date" content="03/30/2017">
+<meta name="ms.technology" content="dotnet-standard">
+<meta name="ms.locfileid" content="64664676">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="core-docs">
+<meta name="locale" content="ru-ru">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="VS">
+<meta name="depot_name" content="VS.core-docs">
+<meta name="updated_at" content="2019-06-25 02:47 AM">
+<meta name="gitcommit" content="https://github.com/dotnet/docs.ru-ru/blob/489a1a021c3bd8f4ac4f29a916003018b0ec9d00/docs/standard/base-types/regular-expression-language-quick-reference.md">
+<meta name="original_content_git_url" content="https://github.com/dotnet/docs.ru-ru/blob/live-sxs/docs/standard/base-types/regular-expression-language-quick-reference.md">
+<meta name="document_id" content="16d4698e-4220-c422-a554-8a481803d240">
+<meta name="document_version_independent_id" content="f0e3b82a-8d81-ad9e-97fc-efb92f7d0d38">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="toc.json">
+<meta name="search.mshattr.devlang" content="csharp">
+<meta name="word_count" content="4105">
+
+	<meta name="scope" content=".NET">
+<link href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference" rel="canonical">
+	<title>Элементы языка регулярных выражений — краткий справочник | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/28c242d6.site-ltr.css">
+
+	<link rel="stylesheet" href="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/b8d322.conceptual.css">
+
+
+	<script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/analytics.js.Без названия"></script><script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			azureHeaderLocale: 'ru-ru',
+			contentLocale: 'ru-ru',
+			contentDir: 'ltr',
+			userLocale: 'ru-ru',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: true,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'dotnet/docs.ru-ru',
+			feedbackProductUrl: 'https://developercommunity.visualstudio.com/spaces/61/index.html',
+			contentGitUrl: 'https://github.com/dotnet/docs.ru-ru/blob/live/docs/standard/base-types/regular-expression-language-quick-reference.md',
+			showLatex: true,
+			extendBreadcrumb: false,
+			auth: 'v2',
+		},
+		functions:{}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="https://static.docs.com/ui/third-party/bluebird/3.5.0/bluebird.min.js" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/fetch/2.0.3/fetch.min.js" integrity="sha384-H3LQq82b6Mm80GYRHtRSlTwO9DoXctmYCVEYk9M8mp97lRzs6DuSrHVUg3SBP9w0" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof HTMLTemplateElement === 'undefined') {
+		document.write('<script src="https://static.docs.com/ui/third-party/template/1.4.0/template.min.js" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof URL !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/url/0.5.7/url.min.js" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"><\/script>');
+	}
+	</script>
+
+	<script src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/jquery-3.3.1.min.js.Без названия" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+		<script src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/4732539f.index-docs.js.Без названия"></script><style></style><script src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/jsll-4.js.Без названия" async="" defer=""></script>
+
+<script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js.Без названия"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(1).Без названия"></script><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(2).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(3).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(4).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(5).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(6).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(7).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(8).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(9).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(10).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(11).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(12).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(13).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(14).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(15).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(16).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(17).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(18).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(19).Без названия"></script><script async="" src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/t.js(20).Без названия"></script></head>
+
+<body lang="ru-ru" dir="ltr"><div id="MathJax_Message" style="display: none;"></div>
+<div class="header-holder has-default-focus">
+	<a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#main" class="skip-to-main-link visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Пропустить и перейти к основному содержимому</a>
+		<div id="headerAreaHolder" data-bi-name="header"><!----><!----><header class="nav-bar" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!---->
+		
+		<button class="nav-bar-burger" aria-label="Глобальная навигация" aria-controls="ax-6" aria-expanded="false">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<nav class="nav-bar-mobile-nav" role="navigation" id="ax-6" aria-label="Глобальный" hidden="">
+			<ul class="nav-bar-mobile-nav-list">
+				<!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/"><!---->.NET<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet"><!---->About<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/learn"><!---->Learn<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/learn/dotnet/architecture-guides"><!---->Architecture<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet"><!---->Docs<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/download"><!---->Downloads<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/platform/community"><!---->Community<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro"><!---->Get Started<!----></a>
+		</li><!---->
+			</ul>
+		</nav>
+		
+		<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+			<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+		</a>
+		<nav class="nav-bar-nav" role="navigation" aria-label="Глобальный">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category has-spacing">
+			<a class="nav-bar-button title has-hover-underline is-4" itemprop="url" href="https://dotnet.microsoft.com/">
+				<span><!---->.NET<!----></span>
+			</a>
+		</li>
+				<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet">
+				<span><!---->About<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://dotnet.microsoft.com/learn">
+				<span><!---->Learn<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://dotnet.microsoft.com/learn/dotnet/architecture-guides">
+				<span><!---->Architecture<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://docs.microsoft.com/dotnet">
+				<span><!---->Docs<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://dotnet.microsoft.com/download">
+				<span><!---->Downloads<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://dotnet.microsoft.com/platform/community">
+				<span><!---->Community<!----></span>
+			</a>
+		</li><!---->
+		<li class="dropdown nav-bar-item" hidden="">
+			<button aria-expanded="false" class="dropdown-trigger nav-bar-button has-hover-underline" aria-controls="ax-7">
+				<span><!---->Подробнее<!----></span>
+				<span class="nav-bar-button-chevron" aria-hidden="true">
+					<span class="docon docon-chevron-down-light expanded-indicator"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu" id="ax-7" aria-label="Подробнее">
+				<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet"><!---->About<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/learn"><!---->Learn<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/learn/dotnet/architecture-guides"><!---->Architecture<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet"><!---->Docs<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/download"><!---->Downloads<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://dotnet.microsoft.com/platform/community"><!---->Community<!----></a>
+		</li>
+	<!---->
+			</ul>
+		</li><!---->
+				
+		<li class="nav-bar-item has-spacing">
+			<a class="button is-small is-primary is-outlined" href="https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro">
+				Get Started
+			</a>
+		</li>
+			</ul>
+		</nav>
+		<span class="nav-bar-spacer"></span>
+		
+			<div class="nav-bar-item nav-bar-search-form-item" id="ax-8" hidden="">
+				
+			<form class="is-flex" method="GET" id="searchForm" name="searchForm" role="search" aria-label="Поиск" aria-expanded="false" action="https://docs.microsoft.com/ru-ru/search/">
+					
+							<button class="nav-bar-button has-margin-extra-small tag" type="button" aria-label="Фильтр поиска: &quot;.NET&quot;. Коснитесь, чтобы удалить.">
+								<span class="is-truncated"><!---->.NET<!----></span>
+								<span class="icon">
+									<span class="docon docon-navigate-close" aria-hidden="true"></span>
+								</span>
+							</button>
+					<div class="autocomplete" data-bi-name="autocomplete"><!---->
+		<div class="control ">
+			<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input   is-full-width" type="search" name="search" aria-expanded="false" aria-owns="ax-9-listbox" aria-activedescendant="" placeholder="Поиск">
+
+			<span class="icon is-small is-left" aria-hidden="true" hidden="">
+				<span class="has-text-primary docon docon-undefined"></span>
+			</span>
+
+			<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+		</div>
+
+		<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-9-listbox" hidden="">
+			
+		</ul><!----></div>
+					<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+					<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+					<input name="category" hidden="" value="All">
+					<input name="scope" hidden="" value=".NET">
+					
+			</form>
+		
+			</div>
+			<div class="nav-bar-item ">
+				<button id="form-expander" class="nav-bar-button has-hover-underline has-margin-left-extra-small" aria-label="Поиск" aria-expanded="false" aria-controls="ax-8">
+						
+					<span class="is-hidden-mobile" aria-hidden="true"><!---->Поиск<!----></span>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-search"></span>
+					</span>
+	
+				</button>
+			</div>
+		<!----><!----></header></div>
+		<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+		<nav class="has-padding-none-mobile" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Навигатор">
+			<ul id="page-breadcrumbs" class="breadcrumbs"><!---->
+		<!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/ru-ru/">
+				Docs
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/ru-ru/dotnet/">
+				.NET
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/ru-ru/dotnet/standard/">
+				Руководство по&nbsp;.NET
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/">
+				Работа с базовыми типами в .NET
+			</a>
+		</li><!---->
+	<!----></ul>
+		</nav>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+				<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+				<span>Содержимое</span>
+			</button>
+		</div>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+				<span>Выйти из режима фокусировки</span>
+			</button>
+		</div>
+		<div id="page-actions" class="is-flex-touch has-flex-justify-content-space-between-touch has-padding-none has-padding-none-mobile">
+			<ul class="action-list has-flex-justify-content-start-mobile is-flex is-flex-row has-flex-wrap">
+						<li><!---->
+		<button type="button" class="bookmark button is-text has-inner-focus is-small is-icon-only-touch">
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-single-bookmark"></span>
+			</span>
+			<span class="bookmark-status is-visually-hidden-touch is-hidden-portrait"><!---->Закладка<!----></span>
+		</button><!----></li><li>
+							<a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#feedback" class="button is-text has-inner-focus is-small is-icon-only-touch" data-bi-name="comments">
+								<span class="icon">
+									<span class="docon docon-comment-lines" aria-hidden="true"></span>
+								</span>
+								<span class="is-visually-hidden-touch is-hidden-portrait">Обратная связь</span>
+							</a>
+						</li>
+							<li id="contenteditbtn">
+									<a href="https://github.com/dotnet/docs.ru-ru/blob/live/docs/standard/base-types/regular-expression-language-quick-reference.md" class="button is-text has-inner-focus is-icon-only-touch is-small" title="Редактировать этот документ" data-bi-name="edit" data-original_content_git_url="https://github.com/dotnet/docs.ru-ru/blob/live-sxs/docs/standard/base-types/regular-expression-language-quick-reference.md" data-original_content_git_url_template="" data-pr_repo="" data-pr_branch="">
+									<span class="icon">
+										<span class="docon docon-edit-outline" aria-hidden="true"></span>
+									</span>
+									<span class="is-visually-hidden-touch is-hidden-portrait">Изменить</span>
+								</a>
+							</li>
+				<li>
+<div class="sharing dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Поделиться этим документом" data-bi-name="share">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-sharing"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Поделиться</span>
+	</button>
+	<div class="dropdown-menu has-padding-small" id="sharing-menu">
+		<ul data-bi-name="share-links">
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fru-ru%2Fdotnet%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Dtwitter&amp;text=%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D1%85%20%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%E2%80%94%20%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B9%20%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fru-ru%2Fdotnet%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Dtwitter">
+					<span class="icon">
+						<span class="docon docon-brand-twitter has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Twitter</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fru-ru%2Fdotnet%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Dlinkedin">
+					<span class="icon">
+						<span class="docon docon-brand-linkedin has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>LinkedIn</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fru-ru%2Fdotnet%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Dfacebook">
+					<span class="icon">
+						<span class="docon docon-brand-facebook has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-email" data-bi-name="email" href="mailto:?subject=%5B%D0%9E%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8F%5D%20%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D1%85%20%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%E2%80%94%20%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B9%20%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%20%7C%20Microsoft%20Docs&amp;body=%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D1%85%20%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%E2%80%94%20%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B9%20%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fru-ru%2Fdotnet%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference%3Fredirectedfrom%3DMSDN%26WT.mc_id%3Demail">
+					<span class="icon">
+						<span class="docon docon-mail-message-fill has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Адрес электронной почты</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>				</li>
+				<li>
+<div class="dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-small is-icon-only-touch has-inner-focus" aria-controls="theme-menu" aria-expanded="false" title="Тема" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Тема</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<div class="theme-selector has-padding-small">
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="light" role="menuitem" aria-selected="true">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Светлая					</span>
+				</button>
+			</div>
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="dark" role="menuitem" aria-selected="false">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Темная					</span>
+				</button>
+			</div>
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" role="menuitem" aria-selected="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Высокая контрастность					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>				</li>
+				<li>
+
+<div class="lang-toggle-container" style="display: flex;">
+	<label for="language-toggle" aria-hidden="true" tabindex="-1">Прочитать на английском</label>
+	<div class="checkbox-toggle-wrapper">
+		<input type="checkbox" id="language-toggle" aria-label="Прочитать на английском" data-m="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+		<label for="language-toggle" class="switch"></label>
+	</div>
+</div>				</li>
+				<li>
+					<a class="docs-sign-in auth-status-determined not-authenticated button is-text has-inner-focus has-text-primary is-small" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#">Войти</a>
+					<div class="dropdown has-caret auth-status-determined authenticated">
+						<button class="dropdown-trigger button is-text has-inner-focus is-small is-icon-only-touch has-inner-focus" aria-label="Ваша учетная запись" aria-controls="user-menu" aria-expanded="false">
+							<span class="icon" aria-hidden="true">
+								<span class="image">
+									<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+								</span>
+							</span>
+							<span class="is-truncated has-margin-left-small" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle has-margin-bottom-none">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="upn"></span>
+									</p>
+									<ul class="is-unstyled has-margin-none has-margin-top-small">
+										<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl">Профиль</a></li>
+										<li><a class="docs-sign-out" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#">Выйти</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button button is-small is-text is-hidden-tablet has-inner-focus is-hidden-tablet" aria-label="Содержимое" data-bi-name="contents-expand-">
+				<span class="icon">
+					<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+				</span>
+				<span>Contents</span>
+			</button>
+		</div>
+	</div>
+
+		<div id="banner-holder" class="has-default-focus has-overflow-hidden">
+		</div>
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"></div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Основной" data-bi-name="left toc" style="width: 364px; top: 113px; bottom: 24px;"><form action="javascript:" role="search" aria-label="Поиск" class="is-full-width has-margin-bottom-small"><label class="visually-hidden" for="ax-10">Поиск</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!---->
+		<div class="control has-icons-left">
+			<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-10" class="autocomplete-input input control has-icons-left is-small is-full-width" type="text" aria-expanded="false" aria-owns="ax-11-listbox" aria-activedescendant="" placeholder="Фильтровать по названию">
+
+			<span class="icon is-small is-left" aria-hidden="true">
+				<span class="has-text-primary docon docon-filter"></span>
+			</span>
+
+			<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+		</div>
+
+		<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-11-listbox" hidden="">
+			
+		</ul><!----></div></form><ul class="tree is-vertically-scrollable has-flex-grow has-flex-shrink" role="tree" aria-label="Оглавление" data-bi-name="tree"><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/">Базовые типы</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/common-type-system">Система общих типов CTS</a></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Преобразование типов в .NET</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Типы форматирования</span></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Операции со строками</span><ul class="tree-group" role="group"><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/manipulating-strings">Операции со строками</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/best-practices-strings">Рекомендации по использованию строк</a></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Базовые операции со строками в .NET Framework</span></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Регулярные выражения в .NET</span><ul class="tree-group" role="group"><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expressions">Регулярные выражения в .NET</a></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Элементы языка регулярных выражений — краткий справочник</span><ul class="tree-group" role="group"><li role="none"><a class="tree-item is-leaf is-selected" role="treeitem" tabindex="0" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference">Элементы языка регулярных выражений — краткий справочник</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/character-escapes-in-regular-expressions">Escape-знаки</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/character-classes-in-regular-expressions">Классы символов</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/anchors-in-regular-expressions">Привязки</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/grouping-constructs-in-regular-expressions">Конструкции группирования</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/quantifiers-in-regular-expressions">Квантификаторы</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/backreference-constructs-in-regular-expressions">Конструкции обратных ссылок</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/alternation-constructs-in-regular-expressions">Конструкции чередования</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/substitutions-in-regular-expressions">Подстановки</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options">Параметры регулярных выражений</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/miscellaneous-constructs-in-regular-expressions">Прочие конструкции</a></li></ul></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/best-practices">Рекомендации по использованию регулярных выражений</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/the-regular-expression-object-model">Объектная модель регулярных выражений</a></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Подробные сведения о поведении регулярных выражений</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Примеры регулярных выражений</span></li></ul></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/character-encoding">Кодировка символов в .NET</a></li></ul></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Анализ строк</span></li></ul></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" lang="ru-ru" dir="ltr">
+
+
+
+						<h1 id="regular-expression-language---quick-reference" sourcefile="docs/standard/base-types/regular-expression-language-quick-reference.md" sourcestartlinenumber="26"><span data-ttu-id="36ba5-102">Элементы языка регулярных выражений — краткий справочник</span><span class="sxs-lookup"><span data-stu-id="36ba5-102">Regular Expression Language - Quick Reference</span></span></h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" lang="ru-ru" dir="ltr">
+							<li class="displayDate">
+								<time role="presentation" datetime="2017-03-30T00:00:00.000Z" data-article-date-source="ms.date">30.03.2017</time>
+							</li>
+								<li class="readingTime">Время чтения: 10 мин</li>
+							<li class="contributors-holder">
+								<a class="has-inner-focus" href="https://github.com/dotnet/docs.ru-ru/blob/live/docs/standard/base-types/regular-expression-language-quick-reference.md" title="5 Соавторы" aria-label="5 Соавторы">
+									<ul class="contributors" data-bi-name="contributors" aria-hidden="true">
+												<li><img src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/rpetrusha.png" data-src="https://github.com/rpetrusha.png?size=32" role="presentation"></li>
+												<li><img src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/olprod.png" data-src="https://github.com/olprod.png?size=32" role="presentation"></li>
+												<li><img src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/ticianaciminari.png" data-src="https://github.com/ticianaciminari.png?size=32" role="presentation"></li>
+												<li><img src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/NextTurn.png" data-src="https://github.com/NextTurn.png?size=32" role="presentation"></li>
+												<li><img src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/Saisang.png" data-src="https://github.com/Saisang.png?size=32" role="presentation"></li>
+									</ul>
+								</a>
+							</li>
+
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Структура статьи">
+							<h3>В этой статье</h3>
+						<ol><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#character-escapes">Escape-знаки</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#character-classes">Классы символов</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#anchors">Привязки</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#grouping-constructs">Конструкции группирования</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#quantifiers">Квантификаторы</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#backreference-constructs">Конструкции обратных ссылок</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#alternation-constructs">Конструкции чередования</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#substitutions">Подстановки</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#regular-expression-options">Параметры регулярных выражений</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#miscellaneous-constructs">Прочие конструкции</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#see-also">См. также</a></li></ol></nav>
+
+
+						<!-- <content> -->
+							
+<p><span data-ttu-id="36ba5-103">Регулярное выражение – это шаблон, который обработчик регулярных выражений пытается сопоставить с введенным текстом.</span><span class="sxs-lookup"><span data-stu-id="36ba5-103">A regular expression is a pattern that the regular expression engine attempts to match in input text.</span></span> <span data-ttu-id="36ba5-104">Шаблон состоит из односимвольных или многосимвольных литералов, операторов или конструкций.</span><span class="sxs-lookup"><span data-stu-id="36ba5-104">A pattern consists of one or more character literals, operators, or constructs.</span></span>  <span data-ttu-id="36ba5-105">См. краткое описание <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expressions" data-linktype="relative-path">регулярных выражений .NET</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-105">For a brief introduction, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expressions" data-linktype="relative-path">.NET Regular Expressions</a>.</span></span></p>
+<p><span data-ttu-id="36ba5-106">В каждом разделе этого краткого справочника приводится перечень конкретной категории символов, операторов и конструкций, которые можно использовать для задания регулярных выражений.</span><span class="sxs-lookup"><span data-stu-id="36ba5-106">Each section in this quick reference lists a particular category of characters, operators, and constructs that you can use to define regular expressions.</span></span></p>
+<p><span data-ttu-id="36ba5-107">Мы также представили эту информацию в двух форматах, чтобы вы могли ее загрузить и распечатать для справки:</span><span class="sxs-lookup"><span data-stu-id="36ba5-107">We’ve also provided this information in two formats that you can download and print for easy reference:</span></span></p>
+<p><a href="https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx" data-linktype="external"><span data-ttu-id="36ba5-108">Загрузить в формате Word (DOCX)</span><span class="sxs-lookup"><span data-stu-id="36ba5-108">Download in Word (.docx) format</span></span></a><br>
+<a href="https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf" data-linktype="external"><span data-ttu-id="36ba5-109">Скачать в формате PDF</span><span class="sxs-lookup"><span data-stu-id="36ba5-109">Download in PDF (.pdf) format</span></span></a></p>
+<h2 id="character-escapes"><span data-ttu-id="36ba5-110">Escape-знаки</span><span class="sxs-lookup"><span data-stu-id="36ba5-110">Character Escapes</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#character-escapes" aria-labelledby="character-escapes"></a></h2>
+<p><span data-ttu-id="36ba5-111">Обратная косая черта (\) в регулярных выражениях указывает, что следующий за ней символ либо является специальным знаком (как показано в следующей таблице), либо должен интерпретироваться буквально.</span><span class="sxs-lookup"><span data-stu-id="36ba5-111">The backslash character (\) in a regular expression indicates that the character that follows it either is a special character (as shown in the following table), or should be interpreted literally.</span></span> <span data-ttu-id="36ba5-112">Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/character-escapes-in-regular-expressions" data-linktype="relative-path">Escape-символы</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-112">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/character-escapes-in-regular-expressions" data-linktype="relative-path">Character Escapes</a>.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-113">Escape-символ</span><span class="sxs-lookup"><span data-stu-id="36ba5-113">Escaped character</span></span></th>
+<th><span data-ttu-id="36ba5-114">Описание</span><span class="sxs-lookup"><span data-stu-id="36ba5-114">Description</span></span></th>
+<th><span data-ttu-id="36ba5-115">Шаблон</span><span class="sxs-lookup"><span data-stu-id="36ba5-115">Pattern</span></span></th>
+<th><span data-ttu-id="36ba5-116">Число соответствий</span><span class="sxs-lookup"><span data-stu-id="36ba5-116">Matches</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\a</code></td>
+<td><span data-ttu-id="36ba5-117">Соответствует знаку колокольчика, \u0007.</span><span class="sxs-lookup"><span data-stu-id="36ba5-117">Matches a bell character, \u0007.</span></span></td>
+<td><code>\a</code></td>
+<td><span data-ttu-id="36ba5-118"><code>"\u0007"</code> в <code>"Error!" + '\u0007'</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-118"><code>"\u0007"</code> in <code>"Error!" + '\u0007'</code></span></span></td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td><span data-ttu-id="36ba5-119">В классе символов соответствует знаку BACKSPACE, \u0008.</span><span class="sxs-lookup"><span data-stu-id="36ba5-119">In a character class, matches a backspace, \u0008.</span></span></td>
+<td><code>[\b]{3,}</code></td>
+<td><span data-ttu-id="36ba5-120"><code>"\b\b\b\b"</code> в <code>"\b\b\b\b"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-120"><code>"\b\b\b\b"</code> in <code>"\b\b\b\b"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td><span data-ttu-id="36ba5-121">Соответствует знаку табуляции, \u0009.</span><span class="sxs-lookup"><span data-stu-id="36ba5-121">Matches a tab, \u0009.</span></span></td>
+<td><code>(\w+)\t</code></td>
+<td><span data-ttu-id="36ba5-122"><code>"item1\t"</code>, <code>"item2\t"</code> в <code>"item1\titem2\t"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-122"><code>"item1\t"</code>, <code>"item2\t"</code> in <code>"item1\titem2\t"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td><span data-ttu-id="36ba5-123">Соответствует знаку возврата каретки, \u000D.</span><span class="sxs-lookup"><span data-stu-id="36ba5-123">Matches a carriage return, \u000D.</span></span> <span data-ttu-id="36ba5-124">(<code>\r</code> не эквивалентен знаку начала новой строки, <code>\n</code>.)</span><span class="sxs-lookup"><span data-stu-id="36ba5-124">(<code>\r</code> is not equivalent to the newline character, <code>\n</code>.)</span></span></td>
+<td><code>\r\n(\w+)</code></td>
+<td><span data-ttu-id="36ba5-125"><code>"\r\nThese"</code> в <code>"\r\nThese are\ntwo lines."</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-125"><code>"\r\nThese"</code> in <code>"\r\nThese are\ntwo lines."</code></span></span></td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td><span data-ttu-id="36ba5-126">Соответствует знаку вертикальной табуляции, \u000B.</span><span class="sxs-lookup"><span data-stu-id="36ba5-126">Matches a vertical tab, \u000B.</span></span></td>
+<td><code>[\v]{2,}</code></td>
+<td><span data-ttu-id="36ba5-127"><code>"\v\v\v"</code> в <code>"\v\v\v"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-127"><code>"\v\v\v"</code> in <code>"\v\v\v"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td><span data-ttu-id="36ba5-128">Соответствует знаку перевода страницы, \u000C.</span><span class="sxs-lookup"><span data-stu-id="36ba5-128">Matches a form feed, \u000C.</span></span></td>
+<td><code>[\f]{2,}</code></td>
+<td><span data-ttu-id="36ba5-129"><code>"\f\f\f"</code> в <code>"\f\f\f"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-129"><code>"\f\f\f"</code> in <code>"\f\f\f"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td><span data-ttu-id="36ba5-130">Соответствует знаку новой строки, \u000A.</span><span class="sxs-lookup"><span data-stu-id="36ba5-130">Matches a new line, \u000A.</span></span></td>
+<td><code>\r\n(\w+)</code></td>
+<td><span data-ttu-id="36ba5-131"><code>"\r\nThese"</code> в <code>"\r\nThese are\ntwo lines."</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-131"><code>"\r\nThese"</code> in <code>"\r\nThese are\ntwo lines."</code></span></span></td>
+</tr>
+<tr>
+<td><code>\e</code></td>
+<td><span data-ttu-id="36ba5-132">Соответствует escape-знаку, \u001B.</span><span class="sxs-lookup"><span data-stu-id="36ba5-132">Matches an escape, \u001B.</span></span></td>
+<td><code>\e</code></td>
+<td><span data-ttu-id="36ba5-133"><code>"\x001B"</code> в <code>"\x001B"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-133"><code>"\x001B"</code> in <code>"\x001B"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-134"><code>\</code> <em>nnn</em></span><span class="sxs-lookup"><span data-stu-id="36ba5-134"><code>\</code> <em>nnn</em></span></span></td>
+<td><span data-ttu-id="36ba5-135">Использует восьмеричное представление для указания символа (<em>nnn</em> состоит из двух или трех цифр).</span><span class="sxs-lookup"><span data-stu-id="36ba5-135">Uses octal representation to specify a character (<em>nnn</em> consists of two or three digits).</span></span></td>
+<td><code>\w\040\w</code></td>
+<td><span data-ttu-id="36ba5-136"><code>"a b"</code>, <code>"c d"</code> в <code>"a bc d"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-136"><code>"a b"</code>, <code>"c d"</code> in <code>"a bc d"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-137"><code>\x</code> <em>nn</em></span><span class="sxs-lookup"><span data-stu-id="36ba5-137"><code>\x</code> <em>nn</em></span></span></td>
+<td><span data-ttu-id="36ba5-138">Использует шестнадцатеричное представление для указания символа (<em>nn</em> состоит ровно из двух цифр).</span><span class="sxs-lookup"><span data-stu-id="36ba5-138">Uses hexadecimal representation to specify a character (<em>nn</em> consists of exactly two digits).</span></span></td>
+<td><code>\w\x20\w</code></td>
+<td><span data-ttu-id="36ba5-139"><code>"a b"</code>, <code>"c d"</code> в <code>"a bc d"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-139"><code>"a b"</code>, <code>"c d"</code> in <code>"a bc d"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-140"><code>\c</code> <em>X</em></span><span class="sxs-lookup"><span data-stu-id="36ba5-140"><code>\c</code> <em>X</em></span></span><br><br> <span data-ttu-id="36ba5-141"><code>\c</code> <em>x</em></span><span class="sxs-lookup"><span data-stu-id="36ba5-141"><code>\c</code> <em>x</em></span></span></td>
+<td><span data-ttu-id="36ba5-142">Соответствует управляющему символу ASCII, который задан как <em>X</em> или <em>x</em>, где <em>X</em> или <em>x</em> является буквой управляющего символа.</span><span class="sxs-lookup"><span data-stu-id="36ba5-142">Matches the ASCII control character that is specified by <em>X</em> or <em>x</em>, where <em>X</em> or <em>x</em> is the letter of the control character.</span></span></td>
+<td><code>\cC</code></td>
+<td><span data-ttu-id="36ba5-143"><code>"\x0003"</code> в <code>"\x0003"</code> (Ctrl-C)</span><span class="sxs-lookup"><span data-stu-id="36ba5-143"><code>"\x0003"</code> in <code>"\x0003"</code> (Ctrl-C)</span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-144"><code>\u</code> <em>nnnn</em></span><span class="sxs-lookup"><span data-stu-id="36ba5-144"><code>\u</code> <em>nnnn</em></span></span></td>
+<td><span data-ttu-id="36ba5-145">Совпадение со знаком Юникода в шестнадцатеричном представлении (строго четыре цифры, представленные как <em>nnnn</em>).</span><span class="sxs-lookup"><span data-stu-id="36ba5-145">Matches a Unicode character by using hexadecimal representation (exactly four digits, as represented by <em>nnnn</em>).</span></span></td>
+<td><code>\w\u0020\w</code></td>
+<td><span data-ttu-id="36ba5-146"><code>"a b"</code>, <code>"c d"</code> в <code>"a bc d"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-146"><code>"a b"</code>, <code>"c d"</code> in <code>"a bc d"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td><span data-ttu-id="36ba5-147">Если за этим знаком следует символ, не распознанный как escape-символ из этой и других таблиц данной темы, то соответствует в точности этому символу.</span><span class="sxs-lookup"><span data-stu-id="36ba5-147">When followed by a character that is not recognized as an escaped character in this and other tables in this topic, matches that character.</span></span> <span data-ttu-id="36ba5-148">Например, <code>\*</code> — это то же самое, что и <code>\x2A</code>, а <code>\.</code> — то же самое, что и <code>\x2E</code>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-148">For example, <code>\*</code> is the same as <code>\x2A</code>, and <code>\.</code> is the same as <code>\x2E</code>.</span></span> <span data-ttu-id="36ba5-149">Это позволяет обработчику регулярных выражений распознавать языковые элементы (такие как *или ?) и символьные литералы (представленные как <code>\*</code> или <code>\?</code>).</span><span class="sxs-lookup"><span data-stu-id="36ba5-149">This allows the regular expression engine to disambiguate language elements (such as * or ?) and character literals (represented by <code>\*</code> or <code>\?</code>).</span></span></td>
+<td><code>\d+[\+-x\*]\d+</code></td>
+<td><span data-ttu-id="36ba5-150"><code>"2+2"</code> и <code>"3*9"</code> в <code>"(2+2) * 3*9"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-150"><code>"2+2"</code> and <code>"3*9"</code> in <code>"(2+2) * 3*9"</code></span></span></td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#top" data-linktype="self-bookmark"><span data-ttu-id="36ba5-151">К началу</span><span class="sxs-lookup"><span data-stu-id="36ba5-151">Back to top</span></span></a></p>
+<h2 id="character-classes"><span data-ttu-id="36ba5-152">Классы символов</span><span class="sxs-lookup"><span data-stu-id="36ba5-152">Character Classes</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#character-classes" aria-labelledby="character-classes"></a></h2>
+<p><span data-ttu-id="36ba5-153">Класс символов соответствует какому-либо одному набору символов.</span><span class="sxs-lookup"><span data-stu-id="36ba5-153">A character class matches any one of a set of characters.</span></span> <span data-ttu-id="36ba5-154">Классы символов состоят из языковых элементов, приведенных в следующей таблице.</span><span class="sxs-lookup"><span data-stu-id="36ba5-154">Character classes include the language elements listed in the following table.</span></span> <span data-ttu-id="36ba5-155">Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/character-classes-in-regular-expressions" data-linktype="relative-path">Классы символов</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-155">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/character-classes-in-regular-expressions" data-linktype="relative-path">Character Classes</a>.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-156">Класс знаков</span><span class="sxs-lookup"><span data-stu-id="36ba5-156">Character class</span></span></th>
+<th><span data-ttu-id="36ba5-157">Описание</span><span class="sxs-lookup"><span data-stu-id="36ba5-157">Description</span></span></th>
+<th><span data-ttu-id="36ba5-158">Шаблон</span><span class="sxs-lookup"><span data-stu-id="36ba5-158">Pattern</span></span></th>
+<th><span data-ttu-id="36ba5-159">Число соответствий</span><span class="sxs-lookup"><span data-stu-id="36ba5-159">Matches</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span data-ttu-id="36ba5-160"><code>[</code> <em>character_group</em> <code>]</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-160"><code>[</code> <em>character_group</em> <code>]</code></span></span></td>
+<td><span data-ttu-id="36ba5-161">Соответствует любому одиночному символу, входящему в <em>character_group</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-161">Matches any single character in <em>character_group</em>.</span></span> <span data-ttu-id="36ba5-162">По умолчанию при сопоставлении учитывается регистр.</span><span class="sxs-lookup"><span data-stu-id="36ba5-162">By default, the match is case-sensitive.</span></span></td>
+<td><code>[ae]</code></td>
+<td><span data-ttu-id="36ba5-163"><code>"a"</code> в <code>"gray"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-163"><code>"a"</code> in <code>"gray"</code></span></span><br><br> <span data-ttu-id="36ba5-164"><code>"a"</code>, <code>"e"</code> в <code>"lane"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-164"><code>"a"</code>, <code>"e"</code> in <code>"lane"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-165"><code>[^</code> <em>character_group</em> <code>]</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-165"><code>[^</code> <em>character_group</em> <code>]</code></span></span></td>
+<td><span data-ttu-id="36ba5-166">Отрицание: соответствует любому одиночному символу, не входящему в <em>character_group</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-166">Negation: Matches any single character that is not in <em>character_group</em>.</span></span> <span data-ttu-id="36ba5-167">По умолчанию символы в <em>character_group</em> чувствительны к регистру.</span><span class="sxs-lookup"><span data-stu-id="36ba5-167">By default, characters in <em>character_group</em> are case-sensitive.</span></span></td>
+<td><code>[^aei]</code></td>
+<td><span data-ttu-id="36ba5-168"><code>"r"</code>, <code>"g"</code>, <code>"n"</code> в <code>"reign"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-168"><code>"r"</code>, <code>"g"</code>, <code>"n"</code> in <code>"reign"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-169"><code>[</code> <em>первый</em> <code>-</code> <em>последний</em> <code>]</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-169"><code>[</code> <em>first</em> <code>-</code> <em>last</em> <code>]</code></span></span></td>
+<td><span data-ttu-id="36ba5-170">Диапазон символов: соответствует одному символу в диапазоне от <em>первого</em> до <em>последнего</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-170">Character range: Matches any single character in the range from <em>first</em> to <em>last</em>.</span></span></td>
+<td><code>[A-Z]</code></td>
+<td><span data-ttu-id="36ba5-171"><code>"A"</code>, <code>"B"</code> в <code>"AB123"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-171"><code>"A"</code>, <code>"B"</code> in <code>"AB123"</code></span></span></td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td><span data-ttu-id="36ba5-172">Подстановочный знак: соответствует любому одиночному символу, кроме \n.</span><span class="sxs-lookup"><span data-stu-id="36ba5-172">Wildcard: Matches any single character except \n.</span></span><br><br> <span data-ttu-id="36ba5-173">Для сопоставления символа точки (.</span><span class="sxs-lookup"><span data-stu-id="36ba5-173">To match a literal period character (.</span></span> <span data-ttu-id="36ba5-174">или <code>\u002E</code>) перед ней нужно поставить дополнительную обратную косую черту (<code>\.</code>).</span><span class="sxs-lookup"><span data-stu-id="36ba5-174">or <code>\u002E</code>), you must precede it with the escape character (<code>\.</code>).</span></span></td>
+<td><code>a.e</code></td>
+<td><span data-ttu-id="36ba5-175"><code>"ave"</code> в <code>"nave"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-175"><code>"ave"</code> in <code>"nave"</code></span></span><br><br> <span data-ttu-id="36ba5-176"><code>"ate"</code> в <code>"water"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-176"><code>"ate"</code> in <code>"water"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-177"><code>\p{</code> <em>имя</em> <code>}</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-177"><code>\p{</code> <em>name</em> <code>}</code></span></span></td>
+<td><span data-ttu-id="36ba5-178">Соответствует любому одиночному символу в общей категории Юникода или в именованном блоке, указанном в параметре <em>имя</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-178">Matches any single character in the Unicode general category or named block specified by <em>name</em>.</span></span></td>
+<td><code>\p{Lu}</code><br><br> <code>\p{IsCyrillic}</code></td>
+<td><span data-ttu-id="36ba5-179"><code>"C"</code>, <code>"L"</code> в <code>"City Lights"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-179"><code>"C"</code>, <code>"L"</code> in <code>"City Lights"</code></span></span><br><br> <span data-ttu-id="36ba5-180"><code>"Д"</code>, <code>"Ж"</code> в <code>"ДЖem"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-180"><code>"Д"</code>, <code>"Ж"</code> in <code>"ДЖem"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-181"><code>\P{</code> <em>имя</em> <code>}</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-181"><code>\P{</code> <em>name</em> <code>}</code></span></span></td>
+<td><span data-ttu-id="36ba5-182">Соответствует любому одиночному символу, не входящему в общую категорию Юникода или в именованный блок, указанный в параметре <em>имя</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-182">Matches any single character that is not in the Unicode general category or named block specified by <em>name</em>.</span></span></td>
+<td><code>\P{Lu}</code><br><br> <code>\P{IsCyrillic}</code></td>
+<td><span data-ttu-id="36ba5-183"><code>"i"</code>, <code>"t"</code>, <code>"y"</code> в <code>"City"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-183"><code>"i"</code>, <code>"t"</code>, <code>"y"</code> in <code>"City"</code></span></span><br><br> <span data-ttu-id="36ba5-184"><code>"e"</code>, <code>"m"</code> в <code>"ДЖem"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-184"><code>"e"</code>, <code>"m"</code> in <code>"ДЖem"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td><span data-ttu-id="36ba5-185">Соответствует любому алфавитно-цифровому знаку.</span><span class="sxs-lookup"><span data-stu-id="36ba5-185">Matches any word character.</span></span></td>
+<td><code>\w</code></td>
+<td><span data-ttu-id="36ba5-186"><code>"I"</code>, <code>"D"</code>, <code>"A"</code>, <code>"1"</code>, <code>"3"</code> в <code>"ID A1.3"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-186"><code>"I"</code>, <code>"D"</code>, <code>"A"</code>, <code>"1"</code>, <code>"3"</code> in <code>"ID A1.3"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td><span data-ttu-id="36ba5-187">Соответствует любому символу, который не является буквенно-цифровым знаком.</span><span class="sxs-lookup"><span data-stu-id="36ba5-187">Matches any non-word character.</span></span></td>
+<td><code>\W</code></td>
+<td><span data-ttu-id="36ba5-188"><code>" "</code>, <code>"."</code> в <code>"ID A1.3"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-188"><code>" "</code>, <code>"."</code> in <code>"ID A1.3"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td><span data-ttu-id="36ba5-189">Соответствует любому знаку пробела.</span><span class="sxs-lookup"><span data-stu-id="36ba5-189">Matches any white-space character.</span></span></td>
+<td><code>\w\s</code></td>
+<td><span data-ttu-id="36ba5-190"><code>"D "</code> в <code>"ID A1.3"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-190"><code>"D "</code> in <code>"ID A1.3"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td><span data-ttu-id="36ba5-191">Соответствует любому знаку, не являющемуся пробелом.</span><span class="sxs-lookup"><span data-stu-id="36ba5-191">Matches any non-white-space character.</span></span></td>
+<td><code>\s\S</code></td>
+<td><span data-ttu-id="36ba5-192"><code>" _"</code> в <code>"int __ctr"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-192"><code>" _"</code> in <code>"int __ctr"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td><span data-ttu-id="36ba5-193">Соответствует любой десятичной цифре.</span><span class="sxs-lookup"><span data-stu-id="36ba5-193">Matches any decimal digit.</span></span></td>
+<td><code>\d</code></td>
+<td><span data-ttu-id="36ba5-194"><code>"4"</code> в <code>"4 = IV"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-194"><code>"4"</code> in <code>"4 = IV"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td><span data-ttu-id="36ba5-195">Соответствует любому символу, не являющемуся десятичной цифрой.</span><span class="sxs-lookup"><span data-stu-id="36ba5-195">Matches any character other than a decimal digit.</span></span></td>
+<td><code>\D</code></td>
+<td><span data-ttu-id="36ba5-196"><code>" "</code>, <code>"="</code>, <code>" "</code>, <code>"I"</code>, <code>"V"</code> в <code>"4 = IV"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-196"><code>" "</code>, <code>"="</code>, <code>" "</code>, <code>"I"</code>, <code>"V"</code> in <code>"4 = IV"</code></span></span></td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#top" data-linktype="self-bookmark"><span data-ttu-id="36ba5-197">К началу</span><span class="sxs-lookup"><span data-stu-id="36ba5-197">Back to top</span></span></a></p>
+<h2 id="anchors"><span data-ttu-id="36ba5-198">Привязки</span><span class="sxs-lookup"><span data-stu-id="36ba5-198">Anchors</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#anchors" aria-labelledby="anchors"></a></h2>
+<p><span data-ttu-id="36ba5-199">Привязки, или атомарные утверждения нулевой ширины, приводят к успеху или сбою сопоставления, в зависимости от текущей позиции в строке, но не предписывают обработчику перемещаться по строке или обрабатывать символы.</span><span class="sxs-lookup"><span data-stu-id="36ba5-199">Anchors, or atomic zero-width assertions, cause a match to succeed or fail depending on the current position in the string, but they do not cause the engine to advance through the string or consume characters.</span></span> <span data-ttu-id="36ba5-200">Метасимволы, приведенные в следующей таблице, являются привязками.</span><span class="sxs-lookup"><span data-stu-id="36ba5-200">The metacharacters listed in the following table are anchors.</span></span> <span data-ttu-id="36ba5-201">Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/anchors-in-regular-expressions" data-linktype="relative-path">Привязки</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-201">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/anchors-in-regular-expressions" data-linktype="relative-path">Anchors</a>.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-202">Утверждение</span><span class="sxs-lookup"><span data-stu-id="36ba5-202">Assertion</span></span></th>
+<th><span data-ttu-id="36ba5-203">Описание</span><span class="sxs-lookup"><span data-stu-id="36ba5-203">Description</span></span></th>
+<th><span data-ttu-id="36ba5-204">Шаблон</span><span class="sxs-lookup"><span data-stu-id="36ba5-204">Pattern</span></span></th>
+<th><span data-ttu-id="36ba5-205">Число соответствий</span><span class="sxs-lookup"><span data-stu-id="36ba5-205">Matches</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td><span data-ttu-id="36ba5-206">По умолчанию соответствие должно начинаться в начале строки. В многострочном режиме соответствие должно начинаться в начале линии.</span><span class="sxs-lookup"><span data-stu-id="36ba5-206">By default, the match must start at the beginning of the string; in multiline mode, it must start at the beginning of the line.</span></span></td>
+<td><code>^\d{3}</code></td>
+<td><span data-ttu-id="36ba5-207"><code>"901"</code> в <code>"901-333-"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-207"><code>"901"</code> in <code>"901-333-"</code></span></span></td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td><span data-ttu-id="36ba5-208">По умолчанию соответствие должно обнаруживаться в конце строки или перед символом <code>\n</code> в конце строки. В многострочном режиме соответствие должно обнаруживаться до конца линии или перед символом <code>\n</code> в конце линии.</span><span class="sxs-lookup"><span data-stu-id="36ba5-208">By default, the match must occur at the end of the string or before <code>\n</code> at the end of the string; in multiline mode, it must occur before the end of the line or before <code>\n</code> at the end of the line.</span></span></td>
+<td><code>-\d{3}$</code></td>
+<td><span data-ttu-id="36ba5-209"><code>"-333"</code> в <code>"-901-333"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-209"><code>"-333"</code> in <code>"-901-333"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\A</code></td>
+<td><span data-ttu-id="36ba5-210">Соответствие должно обнаруживаться в начале строки.</span><span class="sxs-lookup"><span data-stu-id="36ba5-210">The match must occur at the start of the string.</span></span></td>
+<td><code>\A\d{3}</code></td>
+<td><span data-ttu-id="36ba5-211"><code>"901"</code> в <code>"901-333-"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-211"><code>"901"</code> in <code>"901-333-"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\Z</code></td>
+<td><span data-ttu-id="36ba5-212">Соответствие должно обнаруживаться в конце строки или до символа <code>\n</code> в конце строки.</span><span class="sxs-lookup"><span data-stu-id="36ba5-212">The match must occur at the end of the string or before <code>\n</code> at the end of the string.</span></span></td>
+<td><code>-\d{3}\Z</code></td>
+<td><span data-ttu-id="36ba5-213"><code>"-333"</code> в <code>"-901-333"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-213"><code>"-333"</code> in <code>"-901-333"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\z</code></td>
+<td><span data-ttu-id="36ba5-214">Соответствие должно обнаруживаться в конце строки.</span><span class="sxs-lookup"><span data-stu-id="36ba5-214">The match must occur at the end of the string.</span></span></td>
+<td><code>-\d{3}\z</code></td>
+<td><span data-ttu-id="36ba5-215"><code>"-333"</code> в <code>"-901-333"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-215"><code>"-333"</code> in <code>"-901-333"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\G</code></td>
+<td><span data-ttu-id="36ba5-216">Соответствие должно обнаруживаться в той точке, где заканчивается предыдущее соответствие.</span><span class="sxs-lookup"><span data-stu-id="36ba5-216">The match must occur at the point where the previous match ended.</span></span></td>
+<td><code>\G\(\d\)</code></td>
+<td><span data-ttu-id="36ba5-217"><code>"(1)"</code>, <code>"(3)"</code>, <code>"(5)"</code> в <code>"(1)(3)(5)[7](9)"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-217"><code>"(1)"</code>, <code>"(3)"</code>, <code>"(5)"</code> in <code>"(1)(3)(5)[7](9)"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td><span data-ttu-id="36ba5-218">Соответствие должно обнаруживаться на границе между символом <code>\w</code> (алфавитно-цифровым) и символом <code>\W</code> (не алфавитно-цифровым).</span><span class="sxs-lookup"><span data-stu-id="36ba5-218">The match must occur on a boundary between a <code>\w</code> (alphanumeric) and a <code>\W</code> (nonalphanumeric) character.</span></span></td>
+<td><code>\b\w+\s\w+\b</code></td>
+<td><span data-ttu-id="36ba5-219"><code>"them theme"</code>, <code>"them them"</code> в <code>"them theme them them"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-219"><code>"them theme"</code>, <code>"them them"</code> in <code>"them theme them them"</code></span></span></td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td><span data-ttu-id="36ba5-220">Соответствие не должно обнаруживаться на границе <code>\b</code>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-220">The match must not occur on a <code>\b</code> boundary.</span></span></td>
+<td><code>\Bend\w*\b</code></td>
+<td><span data-ttu-id="36ba5-221"><code>"ends"</code>, <code>"ender"</code> в <code>"end sends endure lender"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-221"><code>"ends"</code>, <code>"ender"</code> in <code>"end sends endure lender"</code></span></span></td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#top" data-linktype="self-bookmark"><span data-ttu-id="36ba5-222">К началу</span><span class="sxs-lookup"><span data-stu-id="36ba5-222">Back to top</span></span></a></p>
+<h2 id="grouping-constructs"><span data-ttu-id="36ba5-223">Конструкции группирования</span><span class="sxs-lookup"><span data-stu-id="36ba5-223">Grouping Constructs</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#grouping-constructs" aria-labelledby="grouping-constructs"></a></h2>
+<p><span data-ttu-id="36ba5-224">Конструкции группирования отображают части выражений регулярных выражений и обычно захватывают части строки входной строки.</span><span class="sxs-lookup"><span data-stu-id="36ba5-224">Grouping constructs delineate subexpressions of a regular expression and typically capture substrings of an input string.</span></span> <span data-ttu-id="36ba5-225">Конструкции группирования состоят из языковых элементов, приведенных в следующей таблице.</span><span class="sxs-lookup"><span data-stu-id="36ba5-225">Grouping constructs include the language elements listed in the following table.</span></span> <span data-ttu-id="36ba5-226">Для получения дополнительной информации см. <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/grouping-constructs-in-regular-expressions" data-linktype="relative-path">Конструкции группирования</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-226">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/grouping-constructs-in-regular-expressions" data-linktype="relative-path">Grouping Constructs</a>.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-227">Конструкция группирования</span><span class="sxs-lookup"><span data-stu-id="36ba5-227">Grouping construct</span></span></th>
+<th><span data-ttu-id="36ba5-228">Описание</span><span class="sxs-lookup"><span data-stu-id="36ba5-228">Description</span></span></th>
+<th><span data-ttu-id="36ba5-229">Шаблон</span><span class="sxs-lookup"><span data-stu-id="36ba5-229">Pattern</span></span></th>
+<th><span data-ttu-id="36ba5-230">Число соответствий</span><span class="sxs-lookup"><span data-stu-id="36ba5-230">Matches</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span data-ttu-id="36ba5-231"><code>(</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-231"><code>(</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-232">Захватывает соответствующую часть выражения и назначает ей порядковый номер, отсчитываемый от единицы.</span><span class="sxs-lookup"><span data-stu-id="36ba5-232">Captures the matched subexpression and assigns it a one-based ordinal number.</span></span></td>
+<td><code>(\w)\1</code></td>
+<td><span data-ttu-id="36ba5-233"><code>"ee"</code> в <code>"deep"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-233"><code>"ee"</code> in <code>"deep"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-234"><code>(?&lt;</code> <em>имя</em> <code>&gt;</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-234"><code>(?&lt;</code> <em>name</em> <code>&gt;</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-235">Выделяет соответствующую часть выражения в именованную группу.</span><span class="sxs-lookup"><span data-stu-id="36ba5-235">Captures the matched subexpression into a named group.</span></span></td>
+<td><code>(?&lt;double&gt;\w)\k&lt;double&gt;</code></td>
+<td><span data-ttu-id="36ba5-236"><code>"ee"</code> в <code>"deep"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-236"><code>"ee"</code> in <code>"deep"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-237"><code>(?&lt;</code> <em>имя1</em> <code>-</code> <em>имя2</em> <code>&gt;</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-237"><code>(?&lt;</code> <em>name1</em> <code>-</code> <em>name2</em> <code>&gt;</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-238">Задает сбалансированное определение группы.</span><span class="sxs-lookup"><span data-stu-id="36ba5-238">Defines a balancing group definition.</span></span> <span data-ttu-id="36ba5-239">Дополнительные сведения см. в разделе "Сбалансированное определение группы" статьи <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/grouping-constructs-in-regular-expressions" data-linktype="relative-path">Конструкции группирования</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-239">For more information, see the "Balancing Group Definition" section in <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/grouping-constructs-in-regular-expressions" data-linktype="relative-path">Grouping Constructs</a>.</span></span></td>
+<td><code>(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$</code></td>
+<td><span data-ttu-id="36ba5-240"><code>"((1-3)*(3-1))"</code> в <code>"3+2^((1-3)*(3-1))"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-240"><code>"((1-3)*(3-1))"</code> in <code>"3+2^((1-3)*(3-1))"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-241"><code>(?:</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-241"><code>(?:</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-242">Определяет невыделяемую группу.</span><span class="sxs-lookup"><span data-stu-id="36ba5-242">Defines a noncapturing group.</span></span></td>
+<td><code>Write(?:Line)?</code></td>
+<td><span data-ttu-id="36ba5-243"><code>"WriteLine"</code> в <code>"Console.WriteLine()"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-243"><code>"WriteLine"</code> in <code>"Console.WriteLine()"</code></span></span><br><br> <span data-ttu-id="36ba5-244"><code>"Write"</code> в <code>"Console.Write(value)"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-244"><code>"Write"</code> in <code>"Console.Write(value)"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-245"><code>(?imnsx-imnsx:</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-245"><code>(?imnsx-imnsx:</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-246">Применяет или отключает указанные параметры в <em>части выражения</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-246">Applies or disables the specified options within <em>subexpression</em>.</span></span> <span data-ttu-id="36ba5-247">Для получения дополнительной информации см. <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Параметры регулярных выражений</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-247">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Regular Expression Options</a>.</span></span></td>
+<td><code>A\d{2}(?i:\w+)\b</code></td>
+<td><span data-ttu-id="36ba5-248"><code>"A12xl"</code>, <code>"A12XL"</code> в <code>"A12xl A12XL a12xl"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-248"><code>"A12xl"</code>, <code>"A12XL"</code> in <code>"A12xl A12XL a12xl"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-249"><code>(?=</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-249"><code>(?=</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-250">Утверждение положительного просмотра вперед нулевой ширины.</span><span class="sxs-lookup"><span data-stu-id="36ba5-250">Zero-width positive lookahead assertion.</span></span></td>
+<td><code>\w+(?=\.)</code></td>
+<td><span data-ttu-id="36ba5-251"><code>"is"</code>, <code>"ran"</code> и <code>"out"</code> в <code>"He is. The dog ran. The sun is out."</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-251"><code>"is"</code>, <code>"ran"</code>, and <code>"out"</code> in <code>"He is. The dog ran. The sun is out."</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-252"><code>(?!</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-252"><code>(?!</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-253">Утверждение отрицательного просмотра вперед нулевой ширины.</span><span class="sxs-lookup"><span data-stu-id="36ba5-253">Zero-width negative lookahead assertion.</span></span></td>
+<td><code>\b(?!un)\w+\b</code></td>
+<td><span data-ttu-id="36ba5-254"><code>"sure"</code>, <code>"used"</code> в <code>"unsure sure unity used"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-254"><code>"sure"</code>, <code>"used"</code> in <code>"unsure sure unity used"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-255"><code>(?&lt;=</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-255"><code>(?&lt;=</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-256">Утверждение положительного просмотра назад нулевой ширины.</span><span class="sxs-lookup"><span data-stu-id="36ba5-256">Zero-width positive lookbehind assertion.</span></span></td>
+<td><code>(?&lt;=19)\d{2}\b</code></td>
+<td><span data-ttu-id="36ba5-257"><code>"99"</code>, <code>"50"</code>, <code>"05"</code> в <code>"1851 1999 1950 1905 2003"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-257"><code>"99"</code>, <code>"50"</code>, <code>"05"</code> in <code>"1851 1999 1950 1905 2003"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-258"><code>(?&lt;!</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-258"><code>(?&lt;!</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-259">Утверждение отрицательного просмотра назад нулевой ширины.</span><span class="sxs-lookup"><span data-stu-id="36ba5-259">Zero-width negative lookbehind assertion.</span></span></td>
+<td><code>(?&lt;!19)\d{2}\b</code></td>
+<td><span data-ttu-id="36ba5-260"><code>"51"</code>, <code>"03"</code> в <code>"1851 1999 1950 1905 2003"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-260"><code>"51"</code>, <code>"03"</code> in <code>"1851 1999 1950 1905 2003"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-261"><code>(?&gt;</code> <em>часть выражения</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-261"><code>(?&gt;</code> <em>subexpression</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-262">Часть выражения поиска без возврата (или "жадного" поиска).</span><span class="sxs-lookup"><span data-stu-id="36ba5-262">Nonbacktracking (or "greedy") subexpression.</span></span></td>
+<td><code>[13579](?&gt;A+B+)</code></td>
+<td><span data-ttu-id="36ba5-263"><code>"1ABB"</code>, <code>"3ABB"</code> и <code>"5AB"</code> в <code>"1ABB 3ABBC 5AB 5AC"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-263"><code>"1ABB"</code>, <code>"3ABB"</code>, and <code>"5AB"</code> in <code>"1ABB 3ABBC 5AB 5AC"</code></span></span></td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#top" data-linktype="self-bookmark"><span data-ttu-id="36ba5-264">К началу</span><span class="sxs-lookup"><span data-stu-id="36ba5-264">Back to top</span></span></a></p>
+<h2 id="quantifiers"><span data-ttu-id="36ba5-265">Квантификаторы</span><span class="sxs-lookup"><span data-stu-id="36ba5-265">Quantifiers</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#quantifiers" aria-labelledby="quantifiers"></a></h2>
+<p><span data-ttu-id="36ba5-266">Квантор указывает количество вхождений предшествующего элемента (знака, группы или класса знаков), которое должно присутствовать во входной строке, чтобы было зафиксировано соответствие.</span><span class="sxs-lookup"><span data-stu-id="36ba5-266">A quantifier specifies how many instances of the previous element (which can be a character, a group, or a character class) must be present in the input string for a match to occur.</span></span> <span data-ttu-id="36ba5-267">Кванторы состоят из языковых элементов, приведенных в следующей таблице.</span><span class="sxs-lookup"><span data-stu-id="36ba5-267">Quantifiers include the language elements listed in the following table.</span></span> <span data-ttu-id="36ba5-268">Для получения дополнительной информации см. <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/quantifiers-in-regular-expressions" data-linktype="relative-path">Квантификаторы</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-268">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/quantifiers-in-regular-expressions" data-linktype="relative-path">Quantifiers</a>.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-269">Квантификатор</span><span class="sxs-lookup"><span data-stu-id="36ba5-269">Quantifier</span></span></th>
+<th><span data-ttu-id="36ba5-270">Описание</span><span class="sxs-lookup"><span data-stu-id="36ba5-270">Description</span></span></th>
+<th><span data-ttu-id="36ba5-271">Шаблон</span><span class="sxs-lookup"><span data-stu-id="36ba5-271">Pattern</span></span></th>
+<th><span data-ttu-id="36ba5-272">Число соответствий</span><span class="sxs-lookup"><span data-stu-id="36ba5-272">Matches</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*</code></td>
+<td><span data-ttu-id="36ba5-273">Соответствует предыдущему элементу ноль или более раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-273">Matches the previous element zero or more times.</span></span></td>
+<td><code>\d*\.\d</code></td>
+<td><span data-ttu-id="36ba5-274"><code>".0"</code>, <code>"19.9"</code>, <code>"219.9"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-274"><code>".0"</code>, <code>"19.9"</code>, <code>"219.9"</code></span></span></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><span data-ttu-id="36ba5-275">Соответствует предыдущему элементу один или более раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-275">Matches the previous element one or more times.</span></span></td>
+<td><code>"be+"</code></td>
+<td><span data-ttu-id="36ba5-276"><code>"bee"</code> в <code>"been"</code>, <code>"be"</code> в <code>"bent"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-276"><code>"bee"</code> in <code>"been"</code>, <code>"be"</code> in <code>"bent"</code></span></span></td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td><span data-ttu-id="36ba5-277">Соответствует предыдущему элементу ноль или один раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-277">Matches the previous element zero or one time.</span></span></td>
+<td><code>"rai?n"</code></td>
+<td><span data-ttu-id="36ba5-278"><code>"ran"</code>, <code>"rain"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-278"><code>"ran"</code>, <code>"rain"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-279"><code>{</code> <em>n</em> <code>}</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-279"><code>{</code> <em>n</em> <code>}</code></span></span></td>
+<td><span data-ttu-id="36ba5-280">Предыдущий элемент повторяется ровно <em>n</em> раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-280">Matches the previous element exactly <em>n</em> times.</span></span></td>
+<td><code>",\d{3}"</code></td>
+<td><span data-ttu-id="36ba5-281"><code>",043"</code> в <code>"1,043.6"</code>, <code>",876"</code>, <code>",543"</code> и <code>",210"</code> в <code>"9,876,543,210"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-281"><code>",043"</code> in <code>"1,043.6"</code>, <code>",876"</code>, <code>",543"</code>, and <code>",210"</code> in <code>"9,876,543,210"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-282"><code>{</code> <em>n</em> <code>,}</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-282"><code>{</code> <em>n</em> <code>,}</code></span></span></td>
+<td><span data-ttu-id="36ba5-283">Предыдущий элемент повторяется как минимум <em>n</em> раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-283">Matches the previous element at least <em>n</em> times.</span></span></td>
+<td><code>"\d{2,}"</code></td>
+<td><span data-ttu-id="36ba5-284"><code>"166"</code>, <code>"29"</code>, <code>"1930"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-284"><code>"166"</code>, <code>"29"</code>, <code>"1930"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-285"><code>{</code> <em>n</em> <code>,</code> <em>м</em> <code>}</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-285"><code>{</code> <em>n</em> <code>,</code> <em>m</em> <code>}</code></span></span></td>
+<td><span data-ttu-id="36ba5-286">Предыдущий элемент повторяется как минимум <em>n</em> раз, но не более чем <em>m</em> раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-286">Matches the previous element at least <em>n</em> times, but no more than <em>m</em> times.</span></span></td>
+<td><code>"\d{3,5}"</code></td>
+<td><span data-ttu-id="36ba5-287"><code>"166"</code>, <code>"17668"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-287"><code>"166"</code>, <code>"17668"</code></span></span><br><br> <span data-ttu-id="36ba5-288"><code>"19302"</code> в <code>"193024"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-288"><code>"19302"</code> in <code>"193024"</code></span></span></td>
+</tr>
+<tr>
+<td><code>*?</code></td>
+<td><span data-ttu-id="36ba5-289">Предыдущий элемент не повторяется вообще или повторяется, но как можно меньшее число раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-289">Matches the previous element zero or more times, but as few times as possible.</span></span></td>
+<td><code>\d*?\.\d</code></td>
+<td><span data-ttu-id="36ba5-290"><code>".0"</code>, <code>"19.9"</code>, <code>"219.9"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-290"><code>".0"</code>, <code>"19.9"</code>, <code>"219.9"</code></span></span></td>
+</tr>
+<tr>
+<td><code>+?</code></td>
+<td><span data-ttu-id="36ba5-291">Предыдущий элемент повторяется один или несколько раз, но как можно меньшее число раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-291">Matches the previous element one or more times, but as few times as possible.</span></span></td>
+<td><code>"be+?"</code></td>
+<td><span data-ttu-id="36ba5-292"><code>"be"</code> в <code>"been"</code>, <code>"be"</code> в <code>"bent"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-292"><code>"be"</code> in <code>"been"</code>, <code>"be"</code> in <code>"bent"</code></span></span></td>
+</tr>
+<tr>
+<td><code>??</code></td>
+<td><span data-ttu-id="36ba5-293">Предыдущий элемент не повторяется или повторяется один раз, но как можно меньшее число раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-293">Matches the previous element zero or one time, but as few times as possible.</span></span></td>
+<td><code>"rai??n"</code></td>
+<td><span data-ttu-id="36ba5-294"><code>"ran"</code>, <code>"rain"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-294"><code>"ran"</code>, <code>"rain"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-295"><code>{</code> <em>n</em> <code>}?</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-295"><code>{</code> <em>n</em> <code>}?</code></span></span></td>
+<td><span data-ttu-id="36ba5-296">Предыдущий элемент повторяется ровно <em>n</em> раз.</span><span class="sxs-lookup"><span data-stu-id="36ba5-296">Matches the preceding element exactly <em>n</em> times.</span></span></td>
+<td><code>",\d{3}?"</code></td>
+<td><span data-ttu-id="36ba5-297"><code>",043"</code> в <code>"1,043.6"</code>, <code>",876"</code>, <code>",543"</code> и <code>",210"</code> в <code>"9,876,543,210"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-297"><code>",043"</code> in <code>"1,043.6"</code>, <code>",876"</code>, <code>",543"</code>, and <code>",210"</code> in <code>"9,876,543,210"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-298"><code>{</code> <em>n</em> <code>,}?</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-298"><code>{</code> <em>n</em> <code>,}?</code></span></span></td>
+<td><span data-ttu-id="36ba5-299">Предыдущий элемент повторяется как минимум <em>n</em> раз (как можно меньше).</span><span class="sxs-lookup"><span data-stu-id="36ba5-299">Matches the previous element at least <em>n</em> times, but as few times as possible.</span></span></td>
+<td><code>"\d{2,}?"</code></td>
+<td><span data-ttu-id="36ba5-300"><code>"166"</code>, <code>"29"</code>, <code>"1930"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-300"><code>"166"</code>, <code>"29"</code>, <code>"1930"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-301"><code>{</code> <em>n</em> <code>,</code> <em>м</em> <code>}?</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-301"><code>{</code> <em>n</em> <code>,</code> <em>m</em> <code>}?</code></span></span></td>
+<td><span data-ttu-id="36ba5-302">Предыдущий элемент повторяется не менее <em>n</em> и не более <em>m</em> раз (как можно меньше).</span><span class="sxs-lookup"><span data-stu-id="36ba5-302">Matches the previous element between <em>n</em> and <em>m</em> times, but as few times as possible.</span></span></td>
+<td><code>"\d{3,5}?"</code></td>
+<td><span data-ttu-id="36ba5-303"><code>"166"</code>, <code>"17668"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-303"><code>"166"</code>, <code>"17668"</code></span></span><br><br> <span data-ttu-id="36ba5-304"><code>"193"</code>, <code>"024"</code> в <code>"193024"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-304"><code>"193"</code>, <code>"024"</code> in <code>"193024"</code></span></span></td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#top" data-linktype="self-bookmark"><span data-ttu-id="36ba5-305">К началу</span><span class="sxs-lookup"><span data-stu-id="36ba5-305">Back to top</span></span></a></p>
+<h2 id="backreference-constructs"><span data-ttu-id="36ba5-306">Конструкции обратных ссылок</span><span class="sxs-lookup"><span data-stu-id="36ba5-306">Backreference Constructs</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#backreference-constructs" aria-labelledby="backreference-constructs"></a></h2>
+<p><span data-ttu-id="36ba5-307">Обратная ссылка позволяет впоследствии идентифицировать ранее найденную соответствующую часть выражения в том же регулярном выражении.</span><span class="sxs-lookup"><span data-stu-id="36ba5-307">A backreference allows a previously matched subexpression to be identified subsequently in the same regular expression.</span></span> <span data-ttu-id="36ba5-308">В следующей таблице перечислены конструкции обратных ссылок, поддерживаемые регулярными выражениями .NET.</span><span class="sxs-lookup"><span data-stu-id="36ba5-308">The following table lists the backreference constructs supported by regular expressions in .NET.</span></span> <span data-ttu-id="36ba5-309">Для получения дополнительной информации см. <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/backreference-constructs-in-regular-expressions" data-linktype="relative-path">Конструкции обратных ссылок</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-309">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/backreference-constructs-in-regular-expressions" data-linktype="relative-path">Backreference Constructs</a>.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-310">Конструкция обратных ссылок</span><span class="sxs-lookup"><span data-stu-id="36ba5-310">Backreference construct</span></span></th>
+<th><span data-ttu-id="36ba5-311">Описание</span><span class="sxs-lookup"><span data-stu-id="36ba5-311">Description</span></span></th>
+<th><span data-ttu-id="36ba5-312">Шаблон</span><span class="sxs-lookup"><span data-stu-id="36ba5-312">Pattern</span></span></th>
+<th><span data-ttu-id="36ba5-313">Число соответствий</span><span class="sxs-lookup"><span data-stu-id="36ba5-313">Matches</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span data-ttu-id="36ba5-314"><code>\</code> <em>число</em></span><span class="sxs-lookup"><span data-stu-id="36ba5-314"><code>\</code> <em>number</em></span></span></td>
+<td><span data-ttu-id="36ba5-315">Обратная ссылка.</span><span class="sxs-lookup"><span data-stu-id="36ba5-315">Backreference.</span></span> <span data-ttu-id="36ba5-316">Соответствует значению нумерованной части выражения.</span><span class="sxs-lookup"><span data-stu-id="36ba5-316">Matches the value of a numbered subexpression.</span></span></td>
+<td><code>(\w)\1</code></td>
+<td><span data-ttu-id="36ba5-317"><code>"ee"</code> в <code>"seek"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-317"><code>"ee"</code> in <code>"seek"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-318"><code>\k&lt;</code> <em>имя</em> <code>&gt;</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-318"><code>\k&lt;</code> <em>name</em> <code>&gt;</code></span></span></td>
+<td><span data-ttu-id="36ba5-319">Именованная обратная ссылка.</span><span class="sxs-lookup"><span data-stu-id="36ba5-319">Named backreference.</span></span> <span data-ttu-id="36ba5-320">Соответствует значению именованного выражения.</span><span class="sxs-lookup"><span data-stu-id="36ba5-320">Matches the value of a named expression.</span></span></td>
+<td><code>(?&lt;char&gt;\w)\k&lt;char&gt;</code></td>
+<td><span data-ttu-id="36ba5-321"><code>"ee"</code> в <code>"seek"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-321"><code>"ee"</code> in <code>"seek"</code></span></span></td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#top" data-linktype="self-bookmark"><span data-ttu-id="36ba5-322">К началу</span><span class="sxs-lookup"><span data-stu-id="36ba5-322">Back to top</span></span></a></p>
+<h2 id="alternation-constructs"><span data-ttu-id="36ba5-323">Конструкции чередования</span><span class="sxs-lookup"><span data-stu-id="36ba5-323">Alternation Constructs</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#alternation-constructs" aria-labelledby="alternation-constructs"></a></h2>
+<p><span data-ttu-id="36ba5-324">Конструкции изменения модифицируют регулярное выражение, включая сопоставление по принципу "либо-либо".</span><span class="sxs-lookup"><span data-stu-id="36ba5-324">Alternation constructs modify a regular expression to enable either/or matching.</span></span> <span data-ttu-id="36ba5-325">Такие конструкции состоят из языковых элементов, приведенных в следующей таблице.</span><span class="sxs-lookup"><span data-stu-id="36ba5-325">These constructs include the language elements listed in the following table.</span></span> <span data-ttu-id="36ba5-326">Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/alternation-constructs-in-regular-expressions" data-linktype="relative-path">Конструкции чередования</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-326">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/alternation-constructs-in-regular-expressions" data-linktype="relative-path">Alternation Constructs</a>.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-327">Конструкция изменения</span><span class="sxs-lookup"><span data-stu-id="36ba5-327">Alternation construct</span></span></th>
+<th><span data-ttu-id="36ba5-328">Описание</span><span class="sxs-lookup"><span data-stu-id="36ba5-328">Description</span></span></th>
+<th><span data-ttu-id="36ba5-329">Шаблон</span><span class="sxs-lookup"><span data-stu-id="36ba5-329">Pattern</span></span></th>
+<th><span data-ttu-id="36ba5-330">Число соответствий</span><span class="sxs-lookup"><span data-stu-id="36ba5-330">Matches</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>|</code></td>
+<td><span data-ttu-id="36ba5-331">Соответствует любому элементу, разделенному вертикальной чертой (<code>|</code>).</span><span class="sxs-lookup"><span data-stu-id="36ba5-331">Matches any one element separated by the vertical bar (<code>|</code>) character.</span></span></td>
+<td><code>th(e|is|at)</code></td>
+<td><span data-ttu-id="36ba5-332"><code>"the"</code>, <code>"this"</code> в <code>"this is the day."</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-332"><code>"the"</code>, <code>"this"</code> in <code>"this is the day."</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-333"><code>(?(</code> <em>выражение</em> <code>)</code> <em>да</em> <code>|</code> <em>нет</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-333"><code>(?(</code> <em>expression</em> <code>)</code> <em>yes</em> <code>|</code> <em>no</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-334">Соответствует <em>да</em> в случае соответствия шаблона регулярного выражения, определяемого <em>выражением</em>; в противном случае соответствует дополнительной части <em>нет</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-334">Matches <em>yes</em> if the regular expression pattern designated by <em>expression</em> matches; otherwise, matches the optional <em>no</em> part.</span></span> <span data-ttu-id="36ba5-335"><em>Выражение</em> интерпретируется как утверждение нулевой ширины.</span><span class="sxs-lookup"><span data-stu-id="36ba5-335"><em>expression</em> is interpreted as a zero-width assertion.</span></span></td>
+<td><code>(?(A)A\d{2}\b|\b\d{3}\b)</code></td>
+<td><span data-ttu-id="36ba5-336"><code>"A10"</code>, <code>"910"</code> в <code>"A10 C103 910"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-336"><code>"A10"</code>, <code>"910"</code> in <code>"A10 C103 910"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-337"><code>(?(</code> <em>имя</em> <code>)</code> <em>да</em> <code>|</code> <em>нет</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-337"><code>(?(</code> <em>name</em> <code>)</code> <em>yes</em> <code>|</code> <em>no</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-338">Соответствует <em>да</em> в случае соответствия именованной или нумерованной группы захвата <em>имя</em>; в противном случае соответствует дополнительной части <em>нет</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-338">Matches <em>yes</em> if <em>name</em>, a named or numbered capturing group, has a match; otherwise, matches the optional <em>no</em>.</span></span></td>
+<td><code>(?&lt;quoted&gt;")?(?(quoted).+?"|\S+\s)</code></td>
+<td><span data-ttu-id="36ba5-339"><code>"Dogs.jpg "</code>, <code>"\"Yiska playing.jpg\""</code> в <code>"Dogs.jpg \"Yiska playing.jpg\""</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-339"><code>"Dogs.jpg "</code>, <code>"\"Yiska playing.jpg\""</code> in <code>"Dogs.jpg \"Yiska playing.jpg\""</code></span></span></td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#top" data-linktype="self-bookmark"><span data-ttu-id="36ba5-340">К началу</span><span class="sxs-lookup"><span data-stu-id="36ba5-340">Back to top</span></span></a></p>
+<h2 id="substitutions"><span data-ttu-id="36ba5-341">Подстановки</span><span class="sxs-lookup"><span data-stu-id="36ba5-341">Substitutions</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#substitutions" aria-labelledby="substitutions"></a></h2>
+<p><span data-ttu-id="36ba5-342">Подстановки — это языковые элементы регулярных выражений, которые поддерживаются в шаблонах замены.</span><span class="sxs-lookup"><span data-stu-id="36ba5-342">Substitutions are regular expression language elements that are supported in replacement patterns.</span></span> <span data-ttu-id="36ba5-343">Для получения дополнительной информации см. <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/substitutions-in-regular-expressions" data-linktype="relative-path">Подстановки</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-343">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/substitutions-in-regular-expressions" data-linktype="relative-path">Substitutions</a>.</span></span> <span data-ttu-id="36ba5-344">Приведенные в следующей таблице метасимволы являются атомарными утверждениями нулевой ширины.</span><span class="sxs-lookup"><span data-stu-id="36ba5-344">The metacharacters listed in the following table are atomic zero-width assertions.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-345">Знак</span><span class="sxs-lookup"><span data-stu-id="36ba5-345">Character</span></span></th>
+<th><span data-ttu-id="36ba5-346">Описание</span><span class="sxs-lookup"><span data-stu-id="36ba5-346">Description</span></span></th>
+<th><span data-ttu-id="36ba5-347">Шаблон</span><span class="sxs-lookup"><span data-stu-id="36ba5-347">Pattern</span></span></th>
+<th><span data-ttu-id="36ba5-348">Шаблон замены</span><span class="sxs-lookup"><span data-stu-id="36ba5-348">Replacement pattern</span></span></th>
+<th><span data-ttu-id="36ba5-349">Входная строка</span><span class="sxs-lookup"><span data-stu-id="36ba5-349">Input string</span></span></th>
+<th><span data-ttu-id="36ba5-350">Результирующая строка</span><span class="sxs-lookup"><span data-stu-id="36ba5-350">Result string</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span data-ttu-id="36ba5-351"><code>$</code> <em>число</em></span><span class="sxs-lookup"><span data-stu-id="36ba5-351"><code>$</code> <em>number</em></span></span></td>
+<td><span data-ttu-id="36ba5-352">Замещает часть строки, соответствующую группе <em>число</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-352">Substitutes the substring matched by group <em>number</em>.</span></span></td>
+<td><code>\b(\w+)(\s)(\w+)\b</code></td>
+<td><code>$3$2$1</code></td>
+<td><code>"one two"</code></td>
+<td><code>"two one"</code></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-353"><code>${</code> <em>имя</em> <code>}</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-353"><code>${</code> <em>name</em> <code>}</code></span></span></td>
+<td><span data-ttu-id="36ba5-354">Замещает часть строки, соответствующую именованной группе <em>имя</em>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-354">Substitutes the substring matched by the named group <em>name</em>.</span></span></td>
+<td><code>\b(?&lt;word1&gt;\w+)(\s)(?&lt;word2&gt;\w+)\b</code></td>
+<td><code>${word2} ${word1}</code></td>
+<td><code>"one two"</code></td>
+<td><code>"two one"</code></td>
+</tr>
+<tr>
+<td><code>$$</code></td>
+<td><span data-ttu-id="36ba5-355">Подставляет литерал "$".</span><span class="sxs-lookup"><span data-stu-id="36ba5-355">Substitutes a literal "$".</span></span></td>
+<td><code>\b(\d+)\s?USD</code></td>
+<td><code>$$$1</code></td>
+<td><code>"103 USD"</code></td>
+<td><code>"$103"</code></td>
+</tr>
+<tr>
+<td><code>$&amp;</code></td>
+<td><span data-ttu-id="36ba5-356">Замещает копией полного соответствия.</span><span class="sxs-lookup"><span data-stu-id="36ba5-356">Substitutes a copy of the whole match.</span></span></td>
+<td><code>\$?\d*\.?\d+</code></td>
+<td><code>**$&amp;**</code></td>
+<td><code>"$1.30"</code></td>
+<td><code>"**$1.30**"</code></td>
+</tr>
+<tr>
+<td><code>$`</code></td>
+<td><span data-ttu-id="36ba5-357">Замещает весь текст входной строки до соответствия.</span><span class="sxs-lookup"><span data-stu-id="36ba5-357">Substitutes all the text of the input string before the match.</span></span></td>
+<td><code>B+</code></td>
+<td><code>$`</code></td>
+<td><code>"AABBCC"</code></td>
+<td><code>"AAAACC"</code></td>
+</tr>
+<tr>
+<td><code>$'</code></td>
+<td><span data-ttu-id="36ba5-358">Замещает весь текст входной строки после соответствия.</span><span class="sxs-lookup"><span data-stu-id="36ba5-358">Substitutes all the text of the input string after the match.</span></span></td>
+<td><code>B+</code></td>
+<td><code>$'</code></td>
+<td><code>"AABBCC"</code></td>
+<td><code>"AACCCC"</code></td>
+</tr>
+<tr>
+<td><code>$+</code></td>
+<td><span data-ttu-id="36ba5-359">Замещает последнюю захваченную группу.</span><span class="sxs-lookup"><span data-stu-id="36ba5-359">Substitutes the last group that was captured.</span></span></td>
+<td><code>B+(C+)</code></td>
+<td><code>$+</code></td>
+<td><code>"AABBCCDD"</code></td>
+<td><code>"AACCDD"</code></td>
+</tr>
+<tr>
+<td><code>$_</code></td>
+<td><span data-ttu-id="36ba5-360">Замещает всю входную строку.</span><span class="sxs-lookup"><span data-stu-id="36ba5-360">Substitutes the entire input string.</span></span></td>
+<td><code>B+</code></td>
+<td><code>$_</code></td>
+<td><code>"AABBCC"</code></td>
+<td><code>"AAAABBCCCC"</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#top" data-linktype="self-bookmark"><span data-ttu-id="36ba5-361">К началу</span><span class="sxs-lookup"><span data-stu-id="36ba5-361">Back to top</span></span></a></p>
+<h2 id="regular-expression-options"><span data-ttu-id="36ba5-362">Параметры регулярных выражений</span><span class="sxs-lookup"><span data-stu-id="36ba5-362">Regular Expression Options</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#regular-expression-options" aria-labelledby="regular-expression-options"></a></h2>
+<p><span data-ttu-id="36ba5-363">Можно определить параметры, управляющие интерпретацией шаблона регулярного выражения обработчиком регулярных выражений.</span><span class="sxs-lookup"><span data-stu-id="36ba5-363">You can specify options that control how the regular expression engine interprets a regular expression pattern.</span></span> <span data-ttu-id="36ba5-364">Многие из этих параметров можно указать в шаблоне регулярного выражения либо в виде одной или нескольких констант <a class="xref" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions.regexoptions" data-linktype="absolute-path">RegexOptions</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-364">Many of these options can be specified either inline (in the regular expression pattern) or as one or more <a class="xref" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions.regexoptions" data-linktype="absolute-path">RegexOptions</a> constants.</span></span> <span data-ttu-id="36ba5-365">Этот краткий справочник перечисляет только встраиваемые параметры.</span><span class="sxs-lookup"><span data-stu-id="36ba5-365">This quick reference lists only inline options.</span></span> <span data-ttu-id="36ba5-366">Дополнительные сведения о встроенных параметрах и параметрах <a class="xref" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions.regexoptions" data-linktype="absolute-path">RegexOptions</a> см. в статье <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Параметры регулярных выражений</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-366">For more information about inline and <a class="xref" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions.regexoptions" data-linktype="absolute-path">RegexOptions</a> options, see the article <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Regular Expression Options</a>.</span></span></p>
+<p><span data-ttu-id="36ba5-367">Встроенный параметр можно задать двумя способами:</span><span class="sxs-lookup"><span data-stu-id="36ba5-367">You can specify an inline option in two ways:</span></span></p>
+<ul>
+<li><p><span data-ttu-id="36ba5-368">С помощью <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/miscellaneous-constructs-in-regular-expressions" data-linktype="relative-path">прочих конструкций</a> <code>(?imnsx-imnsx)</code>, где минус (-) перед параметром или набором параметров отключает эти параметры.</span><span class="sxs-lookup"><span data-stu-id="36ba5-368">By using the <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/miscellaneous-constructs-in-regular-expressions" data-linktype="relative-path">miscellaneous construct</a> <code>(?imnsx-imnsx)</code>, where a minus sign (-) before an option or set of options turns those options off.</span></span> <span data-ttu-id="36ba5-369">Например, <code>(?i-mn)</code> включает сопоставление без учета регистра (<code>i</code>), отключает многострочный режим (<code>m</code>) и отключает захват неименованных групп (<code>n</code>).</span><span class="sxs-lookup"><span data-stu-id="36ba5-369">For example, <code>(?i-mn)</code> turns case-insensitive matching (<code>i</code>) on, turns multiline mode (<code>m</code>) off, and turns unnamed group captures (<code>n</code>) off.</span></span> <span data-ttu-id="36ba5-370">Параметр применяется к шаблону регулярного выражения от точки, в которой определен параметр, и действует либо до конца шаблона, либо до точки, в которой другая конструкция отменяет параметр.</span><span class="sxs-lookup"><span data-stu-id="36ba5-370">The option applies to the regular expression pattern from the point at which the option is defined, and is effective either to the end of the pattern or to the point where another construct reverses the option.</span></span></p>
+</li>
+<li><p><span data-ttu-id="36ba5-371">С помощью <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/grouping-constructs-in-regular-expressions" data-linktype="relative-path">конструкции группирования</a><code>(?imnsx-imnsx:</code><em>часть выражения</em><code>)</code>, которая определяет параметры для только для указанной группы.</span><span class="sxs-lookup"><span data-stu-id="36ba5-371">By using the <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/grouping-constructs-in-regular-expressions" data-linktype="relative-path">grouping construct</a><code>(?imnsx-imnsx:</code><em>subexpression</em><code>)</code>, which defines options for the specified group only.</span></span></p>
+</li>
+</ul>
+<p><span data-ttu-id="36ba5-372">Механизм регулярных выражений .NET поддерживает следующие встроенные параметры.</span><span class="sxs-lookup"><span data-stu-id="36ba5-372">The .NET regular expression engine supports the following inline options.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-373">Параметр</span><span class="sxs-lookup"><span data-stu-id="36ba5-373">Option</span></span></th>
+<th><span data-ttu-id="36ba5-374">Описание</span><span class="sxs-lookup"><span data-stu-id="36ba5-374">Description</span></span></th>
+<th><span data-ttu-id="36ba5-375">Шаблон</span><span class="sxs-lookup"><span data-stu-id="36ba5-375">Pattern</span></span></th>
+<th><span data-ttu-id="36ba5-376">Число соответствий</span><span class="sxs-lookup"><span data-stu-id="36ba5-376">Matches</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i</code></td>
+<td><span data-ttu-id="36ba5-377">Использовать соответствие без учета регистра.</span><span class="sxs-lookup"><span data-stu-id="36ba5-377">Use case-insensitive matching.</span></span></td>
+<td><code>\b(?i)a(?-i)a\w+\b</code></td>
+<td><span data-ttu-id="36ba5-378"><code>"aardvark"</code>, <code>"aaaAuto"</code> в <code>"aardvark AAAuto aaaAuto Adam breakfast"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-378"><code>"aardvark"</code>, <code>"aaaAuto"</code> in <code>"aardvark AAAuto aaaAuto Adam breakfast"</code></span></span></td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td><span data-ttu-id="36ba5-379">Использовать многострочный режим.</span><span class="sxs-lookup"><span data-stu-id="36ba5-379">Use multiline mode.</span></span> <span data-ttu-id="36ba5-380"><code>^</code> и <code>$</code> соответствуют началу и концу строки (line), а не началу и концу строки (string).</span><span class="sxs-lookup"><span data-stu-id="36ba5-380"><code>^</code> and <code>$</code> match the beginning and end of a line, instead of the beginning and end of a string.</span></span></td>
+<td><span data-ttu-id="36ba5-381">Пример см. в подразделе "Многострочный режим" раздела <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Параметры регулярных выражений</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-381">For an example, see the "Multiline Mode" section in <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Regular Expression Options</a>.</span></span></td>
+<td aria-label="Нет значения"></td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td><span data-ttu-id="36ba5-382">Не захватывать неименованные группы.</span><span class="sxs-lookup"><span data-stu-id="36ba5-382">Do not capture unnamed groups.</span></span></td>
+<td><span data-ttu-id="36ba5-383">Пример см. в подразделе "Только явные захваты" раздела <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Параметры регулярных выражений</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-383">For an example, see the "Explicit Captures Only" section in <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Regular Expression Options</a>.</span></span></td>
+<td aria-label="Нет значения"></td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td><span data-ttu-id="36ba5-384">Использовать однострочный режим.</span><span class="sxs-lookup"><span data-stu-id="36ba5-384">Use single-line mode.</span></span></td>
+<td><span data-ttu-id="36ba5-385">Пример см. в подразделе "Однострочный режим" раздела <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Параметры регулярных выражений</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-385">For an example, see the "Single-line Mode" section in <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Regular Expression Options</a>.</span></span></td>
+<td aria-label="Нет значения"></td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td><span data-ttu-id="36ba5-386">Игнорировать знаки пробела в шаблоне регулярного выражения, не преобразованные в escape-последовательность.</span><span class="sxs-lookup"><span data-stu-id="36ba5-386">Ignore unescaped white space in the regular expression pattern.</span></span></td>
+<td><code>\b(?x) \d+ \s \w+</code></td>
+<td><span data-ttu-id="36ba5-387"><code>"1 aardvark"</code>, <code>"2 cats"</code> в <code>"1 aardvark 2 cats IV centurions"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-387"><code>"1 aardvark"</code>, <code>"2 cats"</code> in <code>"1 aardvark 2 cats IV centurions"</code></span></span></td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#top" data-linktype="self-bookmark"><span data-ttu-id="36ba5-388">К началу</span><span class="sxs-lookup"><span data-stu-id="36ba5-388">Back to top</span></span></a></p>
+<h2 id="miscellaneous-constructs"><span data-ttu-id="36ba5-389">Прочие конструкции</span><span class="sxs-lookup"><span data-stu-id="36ba5-389">Miscellaneous Constructs</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#miscellaneous-constructs" aria-labelledby="miscellaneous-constructs"></a></h2>
+<p><span data-ttu-id="36ba5-390">Прочие конструкции либо изменяют шаблон регулярных выражений, либо предоставляют сведения о нем.</span><span class="sxs-lookup"><span data-stu-id="36ba5-390">Miscellaneous constructs either modify a regular expression pattern or provide information about it.</span></span> <span data-ttu-id="36ba5-391">В следующей таблице перечислены все прочие конструкции, поддерживаемые .NET.</span><span class="sxs-lookup"><span data-stu-id="36ba5-391">The following table lists the miscellaneous constructs supported by .NET.</span></span> <span data-ttu-id="36ba5-392">Для получения дополнительной информации см. <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/miscellaneous-constructs-in-regular-expressions" data-linktype="relative-path">Прочие конструкции</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-392">For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/miscellaneous-constructs-in-regular-expressions" data-linktype="relative-path">Miscellaneous Constructs</a>.</span></span></p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="36ba5-393">Конструкция</span><span class="sxs-lookup"><span data-stu-id="36ba5-393">Construct</span></span></th>
+<th><span data-ttu-id="36ba5-394">Определение</span><span class="sxs-lookup"><span data-stu-id="36ba5-394">Definition</span></span></th>
+<th><span data-ttu-id="36ba5-395">Пример</span><span class="sxs-lookup"><span data-stu-id="36ba5-395">Example</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(?imnsx-imnsx)</code></td>
+<td><span data-ttu-id="36ba5-396">Устанавливает или отключает такие параметры, как учет регистра в середине шаблона. Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Параметры регулярных выражений</a>.</span><span class="sxs-lookup"><span data-stu-id="36ba5-396">Sets or disables options such as case insensitivity in the middle of a pattern.For more information, see <a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-options" data-linktype="relative-path">Regular Expression Options</a>.</span></span></td>
+<td><span data-ttu-id="36ba5-397"><code>\bA(?i)b\w+\b</code> соответствует <code>"ABA"</code>, <code>"Able"</code> в <code>"ABA Able Act"</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-397"><code>\bA(?i)b\w+\b</code> matches <code>"ABA"</code>, <code>"Able"</code> in <code>"ABA Able Act"</code></span></span></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-398"><code>(?#</code> <em>комментарий</em> <code>)</code></span><span class="sxs-lookup"><span data-stu-id="36ba5-398"><code>(?#</code> <em>comment</em> <code>)</code></span></span></td>
+<td><span data-ttu-id="36ba5-399">Встроенное примечание.</span><span class="sxs-lookup"><span data-stu-id="36ba5-399">Inline comment.</span></span> <span data-ttu-id="36ba5-400">Примечание заканчивается первой закрывающей скобкой.</span><span class="sxs-lookup"><span data-stu-id="36ba5-400">The comment ends at the first closing parenthesis.</span></span></td>
+<td><code>\bA(?#Matches words starting with A)\w+\b</code></td>
+</tr>
+<tr>
+<td><span data-ttu-id="36ba5-401"><code>#</code> [до конца строки]</span><span class="sxs-lookup"><span data-stu-id="36ba5-401"><code>#</code> [to end of line]</span></span></td>
+<td><span data-ttu-id="36ba5-402">Комментарий режима X.</span><span class="sxs-lookup"><span data-stu-id="36ba5-402">X-mode comment.</span></span> <span data-ttu-id="36ba5-403">Примечание начинается от знака <code>#</code> без обратной косой черты и продолжается до конца строки.</span><span class="sxs-lookup"><span data-stu-id="36ba5-403">The comment starts at an unescaped <code>#</code> and continues to the end of the line.</span></span></td>
+<td><code>(?x)\bA\w+\b#Matches words starting with A</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="see-also"><span data-ttu-id="36ba5-404">См. также</span><span class="sxs-lookup"><span data-stu-id="36ba5-404">See also</span></span><a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#see-also" aria-labelledby="see-also"></a></h2>
+<ul>
+<li><a class="xref" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions" data-linktype="absolute-path">System.Text.RegularExpressions</a></li>
+<li><a class="xref" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions.regex" data-linktype="absolute-path">System.Text.RegularExpressions.Regex</a></li>
+<li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expressions" data-linktype="relative-path"><span data-ttu-id="36ba5-405">Регулярные выражения</span><span class="sxs-lookup"><span data-stu-id="36ba5-405">Regular Expressions</span></span></a></li>
+<li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/the-regular-expression-object-model" data-linktype="relative-path"><span data-ttu-id="36ba5-406">Классы регулярных выражений</span><span class="sxs-lookup"><span data-stu-id="36ba5-406">Regular Expression Classes</span></span></a></li>
+<li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-examples" data-linktype="relative-path"><span data-ttu-id="36ba5-407">Примеры регулярных выражений</span><span class="sxs-lookup"><span data-stu-id="36ba5-407">Regular Expression Examples</span></span></a></li>
+<li><a href="https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx" data-linktype="external"><span data-ttu-id="36ba5-408">Краткий справочник по регулярным выражениям (скачать в формате Word)</span><span class="sxs-lookup"><span data-stu-id="36ba5-408">Regular Expressions - Quick Reference (download in Word format)</span></span></a></li>
+<li><a href="https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf" data-linktype="external"><span data-ttu-id="36ba5-409">Регулярные выражения — краткий справочник (загрузить в формате PDF)</span><span class="sxs-lookup"><span data-stu-id="36ba5-409">Regular Expressions - Quick Reference (download in PDF format)</span></span></a></li>
+</ul>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- rating mobile section -->
+								<div class="is-hidden-desktop has-border-top has-margin-top-large has-padding-top-small">
+<div data-bi-name="rating" class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small">
+	<div class="binary-rating">
+		<div class="binary-rating-buttons">
+			<h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Были ли сведения на этой странице полезными?</h3>
+			<div>
+				<button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Да" data-bi-name="rating-yes" data-bi-sat="1">
+					<span class="icon docon docon-like" aria-hidden="true"></span><span>Да</span>
+				</button>
+				<button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="Нет" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-haspopup="true" aria-controls="rating-feedback">
+					<span class="icon docon docon-dislike" aria-hidden="true"></span><span>Нет</span>
+				</button>
+			</div>
+		</div>
+		<form class="feedback-verbatim-form is-hidden">
+			<div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-8">
+				<label for="rating-feedback-mobile" class="visually-hidden">Хотите оставить дополнительный отзыв?</label>
+				<textarea id="rating-feedback-mobile" rows="4" maxlength="999" placeholder="Хотите оставить дополнительный отзыв?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+			</div>
+			<div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+				<button class="skip-rating button is-text is-link is-small" type="button">Пропустить</button>
+				<button disabled="" class="submit-rating button is-primary is-small" type="submit" data-bi-name="rating-verbatim">Отправить</button>
+			</div>
+		</form>
+	</div>
+	<div class="thankyou-rating is-hidden">
+		<p>Спасибо!</p>
+	</div>
+</div>								</div>
+						<!-- end rating mobile section -->
+
+						<!-- feedback section -->
+
+
+
+<section class="feedback-section" data-bi-name="feedback-section">
+
+	<h2 id="feedback">Обратная связь</h2>
+
+	<div class="alert choose-feedback-type">
+		<p id="send-feedback-about" aria-hidden="true">Отправить отзыв о следующем:</p>
+
+		<div class="choose-feedback-buttons">
+			<a class="button feedback-type-product has-margin-bottom-small" aria-label="Отправить отзыв об этом продукте" href="https://developercommunity.visualstudio.com/spaces/61/index.html" data-bi-name="product-feedback">
+				<span>Этот продукт</span>
+				<span class="icon docon docon-navigate-external" aria-hidden="true"></span>
+			</a>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-sign-in-button has-text-wrap" aria-label="Отправить отзыв об этой странице" data-bi-name="feedback-sign-in">
+						<span class="icon docon docon-brand-github" aria-hidden="true"></span>
+						<span>Эта страница</span>
+					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none">
+					<button class="button dropdown-trigger is-full-height" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm0" aria-label="Дополнительные возможности отзыва" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm0" class="dropdown-menu documentation-feedback-menu">
+						Вы также можете оставить отзыв непосредственно на <a data-bi-name="create-issue-on-github" href="https://github.com/dotnet/docs.ru-ru/issues/new?title=&amp;body=%0A%0A%5B%D0%92%D0%B2%D0%B5%D0%B4%D0%B8%D1%82%D0%B5%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%20%D0%B7%D0%B4%D0%B5%D1%81%D1%8C%5D%0A%0A%0A---%0A%23%23%23%23%20%D0%A1%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B5%0A%0A%E2%9A%A0%20*%D0%9D%D0%B5%20%D0%B2%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8%20%D0%B2%20%D1%8D%D1%82%D0%BE%D1%82%20%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB.%20%D0%AD%D1%82%D0%BE%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D1%8F%D0%B7%D1%8B%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20docs.microsoft.com%20%D1%81%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%BC%20%D0%BD%D0%B0%20GitHub.*%0A%0A*%20ID%3A%2016d4698e-4220-c422-a554-8a481803d240%0A*%20Version%20Independent%20ID%3A%20f0e3b82a-8d81-ad9e-97fc-efb92f7d0d38%0A*%20Content%3A%20%5B%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D1%85%20%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%E2%80%94%20%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B9%20%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%5D(https%3A%2F%2Fdocs.microsoft.com%2Fru-ru%2Fdotnet%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference%3Fredirectedfrom%3DMSDN)%0A*%20Content%20Source%3A%20%5Bdocs%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference.md%5D(https%3A%2F%2Fgithub.com%2Fdotnet%2Fdocs.ru-ru%2Fblob%2Flive%2Fdocs%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference.md)%0A*%20Product%3A%20**dotnet**%0A*%20Technology%3A%20**dotnet-standard**%0A*%20GitHub%20Login%3A%20%40rpetrusha%0A*%20Microsoft%20Alias%3A%20**ronpet**">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small" hidden="">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-form-toggle" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="feedback-form" data-bi-name="documentation-feedback">
+Эта страница					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none">
+					<button class="button dropdown-trigger" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm1" aria-label="Дополнительные возможности отзыва" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm1" class="dropdown-menu documentation-feedback-menu">
+						Вы также можете оставить отзыв непосредственно на <a data-bi-name="create-issue-on-github" href="https://github.com/dotnet/docs.ru-ru/issues/new?title=&amp;body=%0A%0A%5B%D0%92%D0%B2%D0%B5%D0%B4%D0%B8%D1%82%D0%B5%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%20%D0%B7%D0%B4%D0%B5%D1%81%D1%8C%5D%0A%0A%0A---%0A%23%23%23%23%20%D0%A1%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B5%0A%0A%E2%9A%A0%20*%D0%9D%D0%B5%20%D0%B2%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8%20%D0%B2%20%D1%8D%D1%82%D0%BE%D1%82%20%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB.%20%D0%AD%D1%82%D0%BE%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D1%8F%D0%B7%D1%8B%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20docs.microsoft.com%20%D1%81%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%BC%20%D0%BD%D0%B0%20GitHub.*%0A%0A*%20ID%3A%2016d4698e-4220-c422-a554-8a481803d240%0A*%20Version%20Independent%20ID%3A%20f0e3b82a-8d81-ad9e-97fc-efb92f7d0d38%0A*%20Content%3A%20%5B%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D1%85%20%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%E2%80%94%20%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B9%20%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%5D(https%3A%2F%2Fdocs.microsoft.com%2Fru-ru%2Fdotnet%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference%3Fredirectedfrom%3DMSDN)%0A*%20Content%20Source%3A%20%5Bdocs%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference.md%5D(https%3A%2F%2Fgithub.com%2Fdotnet%2Fdocs.ru-ru%2Fblob%2Flive%2Fdocs%2Fstandard%2Fbase-types%2Fregular-expression-language-quick-reference.md)%0A*%20Product%3A%20**dotnet**%0A*%20Technology%3A%20**dotnet-standard**%0A*%20GitHub%20Login%3A%20%40rpetrusha%0A*%20Microsoft%20Alias%3A%20**ronpet**">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form class="feedback-form" id="feedback-form" accept-charset="UTF-8" autocomplete="off" action="javascript:" hidden="">
+		<h3 class="feedback-form-heading current-user">
+			<img class="avatar" alt="Аватар" width="36" height="36" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9InRyYW5zcGFyZW50IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==">
+			<span class="username" aria-hidden="true"></span>
+			<span class="visually-hidden">Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.</span>
+		</h3>
+
+		<label>
+			<span class="visually-hidden">Заголовок вопроса</span>
+			<input class="input is-radiusless has-margin-bottom-small" name="title" type="text" placeholder="Заголовок вопроса" required="" pattern=".*[^\s]+.*">
+		</label>
+		<label>
+			<span class="visually-hidden">Оставить комментарий</span>
+			<textarea name="body" placeholder="Оставить комментарий" class="textarea is-radiusless" required=""></textarea>
+		</label>
+
+		<div class="action-container">
+			<button class="button is-primary" type="submit" name="submit">Отправить отзыв</button>
+		</div>
+	</form>
+
+	<div class="feedback-status alert" role="alert">Отзывов об этот документе пока нет. Отзывы по этой странице будут отображаться здесь.</div>
+
+	<div class="feedback-tab-group tabGroup" data-tab-group-independent="" hidden="" data-bi-name="tab-group">
+		<ul role="tablist">
+			<li role="presentation">
+				<a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#tabpanel-issues-open" role="tab" aria-controls="tabpanel-issues-open" data-tab="issues-open" data-bi-name="tab" aria-selected="true" tabindex="0">Не решено: 0</a>
+			</li>
+			<li role="presentation">
+				<a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#tabpanel-issues-closed" role="tab" aria-controls="tabpanel-issues-closed" data-tab="issues-closed" data-bi-name="tab" aria-selected="false" tabindex="-1">Решено: 0</a>
+			</li>
+		</ul>
+		<section id="tabpanel-issues-open" role="tabpanel" data-tab="issues-open">
+			<div class="no-issues-placeholder">Нет открытых вопросов</div>
+			<ul class="github-issues-list" aria-label="Нерешенные проблемы"></ul>
+		</section>
+		<section id="tabpanel-issues-closed" role="tabpanel" data-tab="issues-closed" hidden="hidden" aria-hidden="true">
+			<div class="no-issues-placeholder">Нет закрытых вопросов</div>
+			<ul class="github-issues-list" aria-label="Решенные проблемы"></ul>
+		</section>
+	</div>
+	<div class="action-container">
+		<a class="view-on-github" href="https://github.com/dotnet/docs.ru-ru/issues?utf8=%E2%9C%93&amp;q=%22f0e3b82a-8d81-ad9e-97fc-efb92f7d0d38%22&amp;in=body" data-bi-name="view-on-github" hidden="">
+			<span class="docon docon-brand-github" aria-hidden="true"></span>
+			<span>Просмотреть на GitHub</span>
+			<span class="docon docon-navigate-external" aria-hidden="true"></span>
+		</a>
+	</div>
+</section>
+
+
+						<!-- end feedback section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/ru-ru/locale?target=https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text has-inner-focus">Русский</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Документация по предыдущей версии</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Блог</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Участие в доработке</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Конфиденциальность и файлы cookie</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/ru-ru/legal/termsofuse" data-bi-name="termsofuse">Условия использования</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Отзывы о сайте</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Товарные знаки</a></li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div id="page-actions" class="right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Действия страницы">
+							<div id="affixed-right-container" class="doc-outline is-fixed is-vertically-scrollable" style="width: 199.188px; top: 113px; bottom: 24px;">
+<div data-bi-name="rating" class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small">
+	<div class="binary-rating">
+		<div class="binary-rating-buttons">
+			<h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Были ли сведения на этой странице полезными?</h3>
+			<div>
+				<button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Да" data-bi-name="rating-yes" data-bi-sat="1">
+					<span class="icon docon docon-like" aria-hidden="true"></span><span>Да</span>
+				</button>
+				<button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="Нет" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-haspopup="true" aria-controls="rating-feedback">
+					<span class="icon docon docon-dislike" aria-hidden="true"></span><span>Нет</span>
+				</button>
+			</div>
+		</div>
+		<form class="feedback-verbatim-form is-hidden">
+			<div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-8">
+				<label for="rating-feedback-mobile" class="visually-hidden">Хотите оставить дополнительный отзыв?</label>
+				<textarea id="rating-feedback-mobile" rows="4" maxlength="999" placeholder="Хотите оставить дополнительный отзыв?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+			</div>
+			<div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+				<button class="skip-rating button is-text is-link is-small" type="button">Пропустить</button>
+				<button disabled="" class="submit-rating button is-primary is-small" type="submit" data-bi-name="rating-verbatim">Отправить</button>
+			</div>
+		</form>
+	</div>
+	<div class="thankyou-rating is-hidden">
+		<p>Спасибо!</p>
+	</div>
+</div>								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="Структура статьи">
+									<h3>В этой статье</h3>
+								<ol><li class="selected"><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#character-escapes">Escape-знаки</a></li><li class=""><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#character-classes">Классы символов</a></li><li class=""><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#anchors">Привязки</a></li><li class=""><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#grouping-constructs">Конструкции группирования</a></li><li class=""><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#quantifiers">Квантификаторы</a></li><li class=""><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#backreference-constructs">Конструкции обратных ссылок</a></li><li class=""><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#alternation-constructs">Конструкции чередования</a></li><li class=""><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#substitutions">Подстановки</a></li><li class=""><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#regular-expression-options">Параметры регулярных выражений</a></li><li class=""><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#miscellaneous-constructs">Прочие конструкции</a></li><li><a href="https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN#see-also">См. также</a></li></ol></nav>
+							</div>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/ru-ru/locale?target=https://docs.microsoft.com/ru-ru/dotnet/standard/base-types/regular-expression-language-quick-reference?redirectedfrom=MSDN" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">Русский</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Документация по предыдущей версии</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Блог</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Участие в доработке</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Конфиденциальность и файлы cookie</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/ru-ru/legal/termsofuse" data-bi-name="termsofuse">Условия использования</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Отзывы о сайте</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Товарные знаки</a></li>
+    </ul>
+</footer>
+	</div>
+
+		<script type="text/x-mathjax-config;executed=true">
+			MathJax.Hub.Config({
+				showMathMenu: false,
+				showMathMenuMSIE: false,
+				tex2jax: {
+					inlineMath: [['$','$'], ['\\(','\\)']],
+					processEscapes: true
+				}
+			});
+		</script>
+		<script src="./Элементы языка регулярных выражений — краткий справочник _ Microsoft Docs_files/MathJax.js.Без названия" integrity="sha384-RLsAi7wiVvnmHrRjlVvUjU45C0bfsIBg6Gsxue6azjJi+lA5q5uK+XbGzO3yn5g1" crossorigin="anonymous"></script>
+	<div id="action-panel" role="region" aria-label="Панель действий" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>
